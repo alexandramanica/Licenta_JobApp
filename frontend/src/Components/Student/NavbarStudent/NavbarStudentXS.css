@@ -1,0 +1,12 @@
+
+.sidebar-student #title{
+    flex: 100%;
+    font-size: 15px;
+}
+
+.sidebar-student #icon{
+    flex: 20%;
+    display: grid;
+    place-items: center;
+}
+

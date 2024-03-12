@@ -1,0 +1,94 @@
+.settings-title{
+    font-size: 40px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 300px;
+}
+
+.settings-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.inputSetting-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 300px;
+    margin-bottom: 10px;
+}
+
+.inputSettings{
+    margin-top: 10px;
+    background-color: #212152;
+    color: #d6efff !important;
+    font-family: 'Montserrat',sans-serif !important;
+    width: 70%;
+    height:50px;
+    border-radius: 10px;
+    font-size: 18px !important;
+    text-align: start!important;
+}
+
+.inputSettings::placeholder{
+    color: #d6efff !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-size: 18px !important;
+    line-height: 50px !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important;
+}
+
+.input-title{
+    font-size: 15px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn-saveSettings{
+    width: 100px;
+    border-radius: 20px !important;
+    margin-top: 20px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    font-family: "Montserrat",sans-serif !important;
+    color: white !important;
+    cursor: pointer;
+    background-image: linear-gradient(to left,#fdca40,#f79f1c,#fdca40);
+    background-size: 200%;
+    transition: 0.6s !important;
+    padding: 8px;
+    
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-left: 300px !important;
+}
+
+.btn-saveSettings:hover{
+    background-position: right !important;
+}
+
+@media (max-width: 900px) {
+    .inputSetting-div{
+        margin-left: 30px;
+    }
+
+    .settings-title{
+        margin-left: 30px;
+    }
+
+    .btn-saveSettings{
+        margin-left: 30px !important;
+    }
+}

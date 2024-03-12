@@ -1,0 +1,166 @@
+.modal-student-school .MuiBox-root{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #171738 ;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.modal-student-school .add-school-title{
+    font-size: 30px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.modal-student-school .add-school-advice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    font-weight: 500;
+}
+
+.modal-student-school .add-school-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.modal-student-school .add-school-container .input-add-school-div {
+    margin-bottom: 10px;
+    color: #d6efff;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+}
+
+.modal-student-school .add-school-container .input-add-school-div .input-add-school{
+    margin-top: 10px;
+    background-color: #212152;
+    width: 90%;
+    height:50px;
+    border-radius: 10px;
+}
+
+.modal-student-school .add-school-container .date-add-school-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-student-school .add-school-container .date-add-school-div .date-picker-add-school{
+    width: 80%;
+    margin-top: 10px;
+    background-color: #212152;
+    border-radius: 10px;
+    color: #d6efff;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.modal-student-school .modal-student-school .MuiBox-root{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #171738 ;
+    z-index: 1000;
+}
+
+.modal-student-school .add-school-title{
+    font-size: 30px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.modal-student-school .add-school-advice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-family: 'Montserrat',sans-serif;
+    color: #d6efff;
+    font-weight: 500;
+}
+
+.modal-student-school .add-school-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.modal-student-school .add-school-container .input-add-school-div {
+    margin-bottom: 10px;
+    color: #d6efff;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+}
+
+.modal-student-school .add-school-container .input-add-school-div .input-add-school{
+    margin-top: 10px;
+    background-color: #212152;
+    width: 90%;
+    height:50px;
+    border-radius: 10px;
+}
+
+.modal-student-school .add-school-container .date-add-school-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-student-school .add-school-container .date-add-school-div .date-picker-add-school{
+    width: 80%;
+    margin-top: 10px;
+    background-color: #212152;
+    border-radius: 10px;
+    color: #d6efff;
+    font-family: 'Montserrat',sans-serif;
+}
+
+@media (max-width: 790px) {
+    .modal-student-school .MuiBox-root {
+      height: 100%;
+    }
+}
+
+

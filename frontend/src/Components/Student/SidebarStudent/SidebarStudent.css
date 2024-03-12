@@ -1,0 +1,66 @@
+.MuiDrawer-paper{
+    position: fixed;
+    width: 250px ;
+    height: 100%;
+}   
+
+.sidebar-student .row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    color: #e3f1fa;
+    list-style-type: none;
+    margin: 0;
+} 
+
+.sidebar-student #title{
+    flex: 80%;
+    font-size: 15px;
+}
+
+.sidebar-student #icon{
+    flex: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.link-class:hover{
+    color: #f79f1c;
+    cursor: pointer;
+}
+
+#menu-title{
+    padding:5px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link-class{
+    color:#e3f1fa;
+    font-size: 15px;
+}
+
+.link-class:hover{
+    color: #f79f1c;
+}
+
+.sidebar-student .MuiButton-root{
+    background-color: #171738;
+    color:#e3f1fa;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 40px;
+}
+
+.sidebar-student .MuiButton-root:hover{
+    background-color: #171738;
+    color: #f79f1c;
+}
+

@@ -1,0 +1,79 @@
+.homePage .imageDiv{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 100px; 
+    padding-right: 100px;
+    background-color: #171738;
+    overflow: hidden;
+}
+
+.homePage .imageDiv img{
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 25px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.homePage .imageDiv .textDiv{
+    position:relative;
+    text-align: left;
+}
+
+.homePage .imageDiv .textDiv .title{
+    color: white;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.homePage .imageDiv .text{
+    color: white;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.homePage .imageDiv .btn{
+    position:relative;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(to left,#fdca40,#f79f1c,#fdca40);
+    background-size: 200%;
+    transition: 0.6s;
+    padding: 8px;
+}
+
+.homePage .imageDiv .btn:hover{
+    background-position: right;
+  }
+
+@media (max-width: 768px) {
+
+    .homePage .imageDiv .textDiv .title{
+        font-size: 55px;
+    }
+
+    .homePage .imageDiv .text{
+        font-size: 25px;
+    }
+
+    .homePage .imageDiv .btn{
+        font-size: 20px;
+    }
+}
+
+
