@@ -1,8 +1,18 @@
 .MuiDrawer-paper{
     position: fixed;
-    width: 250px ;
+    width: 300px ;
     height: 100%;
 }   
+
+.sidebar-student {
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.sidebar-student-container{
+    display: flex;
+    flex-direction: column;
+}
 
 .sidebar-student .row{
     width: 100%;
@@ -11,9 +21,10 @@
     justify-content: center;
     align-items: center;
     padding: 10px 30px;
-    color: #e3f1fa;
+    color: #dadcf2;
     list-style-type: none;
     margin: 0;
+
 } 
 
 .sidebar-student #title{
@@ -28,8 +39,30 @@
 }
 
 .link-class:hover{
-    color: #f79f1c;
+    color: #dadcf2;
     cursor: pointer;
+}
+
+#subtitle-link-class{
+    display: flex;
+    flex-direction: column;
+}
+
+.link-class-subNav {
+    padding-left: 20px; 
+    color: #dadcf2;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-left: 50px;
+    align-items: center;
+    font-weight: 500;
+    
+  }
+
+.link-class-subNav .active-subnav {
+color: #AE85FF;
 }
 
 #menu-title{
@@ -41,26 +74,28 @@
 }
 
 .link-class{
-    color:#e3f1fa;
+    color:#dadcf2;
     font-size: 15px;
 }
 
 .link-class:hover{
-    color: #f79f1c;
+    color: #dadcf2;
 }
 
-.sidebar-student .MuiButton-root{
-    background-color: #171738;
-    color:#e3f1fa;
+.sidebar-student  .MuiButton-root{
+    background-color: #000000;
+    color:#dadcf2;
     font-family: 'Montserrat',sans-serif;
     font-size: 15px;
     display: flex;
     justify-content: center;
-    padding: 10px 40px;
+    align-items: center;
+
+    
 }
 
 .sidebar-student .MuiButton-root:hover{
-    background-color: #171738;
-    color: #f79f1c;
+    background-color: #000000;
+    color: #AE85FF;
 }
 

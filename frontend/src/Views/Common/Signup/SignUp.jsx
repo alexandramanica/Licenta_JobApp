@@ -13,8 +13,8 @@ import Alert from '@mui/material/Alert';
 import './SignUp.css'
 import '../../../App.css'
 
-import photoLogin from '../../../assets/pexels-buro-millennial-1438072.jpg'
-import logo from '../../../assets/JumpStart.png'
+import videoLogin from '../../../assets/assetsLoginRegister/videoStudents.mp4'
+import logo from '../../../assets/assetsLogo/JumpStartLogoGrey.png'
 import NavbarBF from '../../../Components/Common/NavbarBF/NavbarBF'
 
 
@@ -22,7 +22,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import PersonIcon from '@mui/icons-material/Person';
 import LoginIcon from '@mui/icons-material/Login';
 import EmailIcon from '@mui/icons-material/Email';
-import BadgeIcon from '@mui/icons-material/Badge';
+import LockIcon from '@mui/icons-material/Lock';
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -94,10 +94,11 @@ export default function SignUp() {
     <div className="container flex">
 
       <div className="videoDiv">
-        <img src={photoLogin} alt="login" />
+        <video src={videoLogin} autoPlay loop muted />
         <div className="textDiv">
-          <h2 className="title">Welcome back</h2>
-          <p>Hi there</p>
+          <h2 className="title">Join the Journey to Your Dream Job!</h2>
+          <p>Ready to take the first step towards your career aspirations?
+             Let's jumpstart your job search by creating your account.</p>
         </div>
 
         <div className="footerDiv flex">
@@ -111,7 +112,6 @@ export default function SignUp() {
       <div className="formDiv flex">
         <div className="headerDiv">
           <img src={logo} alt="logo" />
-          <h3>Sign up</h3>
           </div>
 
         <form onSubmit={handleSubmit} className='form grid'>
@@ -139,7 +139,7 @@ export default function SignUp() {
           <div className="inputDiv">
             <label htmlFor="password">Password</label>
             <div className="input">
-              <BadgeIcon className='icon' />
+              <LockIcon className='icon' />
               <input type="password" name="password" id="password" placeholder="Enter your password" 
               onChange={(e) => setPassword(e.target.value)}/>
              
@@ -159,7 +159,7 @@ export default function SignUp() {
             >
               <FormControlLabel 
               value="student" 
-              control={<Radio sx={{ color: "black", '&.Mui-checked': { color: "#F79F1C" } }} />} 
+              control={<Radio sx={{ color: "black", '&.Mui-checked': { color: "#7F27FF" } }} />} 
               label="Student"  
               sx={{
                 '& .MuiFormControlLabel-label': {
@@ -172,7 +172,7 @@ export default function SignUp() {
             />
             <FormControlLabel 
               value="company" 
-              control={<Radio sx={{ color: "black", '&.Mui-checked': { color: "#F79F1C" } }} />} 
+              control={<Radio sx={{ color: "black", '&.Mui-checked': { color: "#7F27FF" } }} />} 
               label="Company" 
               sx={{
                 '& .MuiFormControlLabel-label': {

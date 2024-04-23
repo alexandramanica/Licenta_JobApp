@@ -1,0 +1,139 @@
+
+
+.student-about-job .student-about-job-paper{
+    background-color: white;
+    height: 95vh;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+}
+
+.student-about-job .student-about-job-container{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+.student-about-job .student-about-job-container .student-about-job-title{
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #7f27ff;
+}
+
+.student-about-job .student-about-job-container .student-about-job-date{
+    font-size: 1em;
+    color: #000;
+    font-weight: 300;
+    margin-top: 7px;
+}
+
+.student-about-job .student-about-job-container .student-about-job-company{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #ae85ff;
+}
+
+.student-about-job .student-about-job-container .student-about-job-details-container{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.student-about-job .student-about-job-container .student-about-job-location-container,
+.student-about-job .student-about-job-container .student-about-job-type-container,
+.student-about-job .student-about-job-container .student-about-job-salary-container,
+.student-about-job .student-about-job-container .student-about-job-regime-container {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  margin-right: 10px;
+  background-color: #F8F8FA;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.student-about-job .student-about-job-container .student-about-job-text-container .student-about-job-title-description{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ae85ff;
+    margin-top: 20px;
+}
+
+.student-about-job .student-about-job-container .student-about-job-text-container .student-about-job-subtitle-description{
+    font-size: 1em;
+    margin-top: 10px;
+    display: flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.student-about-job .student-about-job-container .student-about-job-buttons-container{
+   display: flex;
+   margin-top: 10px;
+   justify-content: flex-start;
+   
+}
+
+.student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-apply {
+    background-color: #7f27ff; 
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-applied{
+    font-family: 'Montserrat',sans-serif;
+    background-color:  #F8F8FA;
+    margin-right: 10px;
+  }
+
+  .student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-apply:hover{
+    background-color: #ae85ff;
+    color: white;
+  }
+
+  
+.student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-save-job {
+    border: 2px solid #c7ef00; 
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  
+.student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-saved-job{
+  background-color:  #c7ef00; 
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.9em;
+  border-radius: 5px;
+  margin-right: 10px;
+  }
+
+  .student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-save-job:hover{
+    background-color: #c7ef00;
+  }
+  
+  
+
+
+

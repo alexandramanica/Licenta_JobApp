@@ -1,3 +1,9 @@
+
+body{
+    background-color: #ffffff;
+}
+
+
 .flex{
     display: flex;
     align-items: center;
@@ -9,10 +15,6 @@
     gap: 1.5rem;
 }
 
-body{
-    background-color: #171738;
-}
-
 .loginPage{
     height: 100vh;
     width: 100%;
@@ -20,7 +22,7 @@ body{
     border-radius: 10px;
     overflow: hidden;
     box-shadow: none;
-    background-color: #171738;
+    background-color: #ffffff;
 }
 
 .loginPage .container{
@@ -28,7 +30,7 @@ body{
     width: 60%;
     margin: auto;
     justify-content: space-between;
-    background-color: #E3F1FA;
+    background-color: #F8F8FA;
     border-radius: 10px;
 }
 
@@ -69,14 +71,15 @@ body{
 
 .loginPage .container .videoDiv .textDiv .title{
     color: white;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 800;
 }
 
 .loginPage .container .videoDiv .textDiv p{
-    color: white;
+    color: #ffffff;
     padding: 1rem ;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 17px;
 }
 
 .loginPage .container .videoDiv .footerDiv .text{
@@ -100,7 +103,7 @@ body{
 
 .loginPage .container .videoDiv .btn{
     background: white;
-    color: black;
+    color: #7F27FF;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     font-weight: 400;
@@ -108,8 +111,8 @@ body{
 }
 
 .loginPage .container .videoDiv .btn:hover{
-    background: #FDCA40;
-    color: white;
+    background: #C7EF00;
+    color: black;
 }
 
 .loginPage .container .formDiv{
@@ -126,18 +129,24 @@ body{
 }
 
 .loginPage .container .formDiv .headerDiv img{
-    width: 60px;
-    padding-bottom: .5rem;
+    width: 150px;
+    padding-bottom: .1rem;
 }
 
 .loginPage .container .formDiv .headerDiv h3{
     font-size: 25px;
-    color: black ;
+    color: #FF8911 ;
     font-weight: 800;
 }
 
 .loginPage .container  .formDiv .form{
     gap: 1rem;
+}
+
+.loginPage .container  .formDiv .form .inputDiv {
+    display: flex;
+    flex-direction: column;
+   
 }
 
 .loginPage .container  .formDiv .form .inputDiv input{
@@ -165,11 +174,11 @@ body{
 }
 
 .loginPage .container .formDiv .form .inputDiv .icon{
-    color:#F79F1C
+    color:#7F27FF
 }
 
 .loginPage .container .formDiv .form .btn{
-    background: #F79F1C;
+    background: #7F27FF;
     color: white;
     padding: 0.8rem;
     border-radius: 10px;
@@ -184,7 +193,7 @@ body{
 }
 
 .loginPage .container .formDiv .form .btn:hover{
-    background-color: #FDCA40;
+    background-color: #AE85FF;
 }
 
 .loginPage .container .formDiv .forgotPassword{
@@ -197,7 +206,7 @@ body{
 .loginPage .container .formDiv .forgotPassword a{
     text-decoration: underline;
     cursor: pointer;
-    color: black;
+    color: #FF8911;
 }
 
 @media screen and (max-width: 602px) {

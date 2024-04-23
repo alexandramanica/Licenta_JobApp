@@ -1,0 +1,37 @@
+.all-cards-steps-home-page{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.all-cards-steps-home-page .card-steps-home-page{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    width: 25% ;
+    height: 250px;
+    background-color:#F8F8FA;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.all-cards-steps-home-page .card-steps-home-page .card-steps-home-page-icon{
+    color: #FF8911;
+    margin-bottom: 10px;
+}
+
+.all-cards-steps-home-page .card-steps-home-page .card-steps-home-page-title{
+    font-size: 20px;
+    color: #7F27FF;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.all-cards-steps-home-page .card-steps-home-page .card-steps-home-page-description{
+    font-size: 17px;
+    margin-bottom: 10px;
+}

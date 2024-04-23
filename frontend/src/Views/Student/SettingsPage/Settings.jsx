@@ -3,7 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 
 // Settings.jsx
-import { refreshToken, axiosJWT, getUserDataFromToken } from '../tokenPrep.jsx';
+import { refreshToken, axiosJWT, getUserDataFromToken } from '../../tokenPrep.jsx';
 import Sidebar from '../../../Components/Student/SidebarStudent/SidebarStudent.jsx'
 import NavbarStudentMD from '../../../Components/Student/NavbarStudent/NavbarStudentMD.jsx'
 import NavbarStudentXS from '../../../Components/Student/NavbarStudent/NavbarStudentXS.jsx'

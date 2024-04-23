@@ -21,12 +21,12 @@ export default function ButtonAppBar() {
   return (
     <div>
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" className='navbar' sx={{backgroundColor:"#171738", boxShadow:0}}>
+      <AppBar position="static" className='navbar' sx={{backgroundColor:"#ffffff", boxShadow:0, borderBottom: '1px solid #F8F8FA'}}>
         <Toolbar sx={{ justifyContent: "center" }}>
         <Box sx={{ 
            flexGrow: 1,
            display: { xs: 'flex', md: 'none' },
-           color:'#e3f1fa'}}>
+           color:'#7F27FF'}}>
           <IconButton
             size="large"
             edge="start"
@@ -38,17 +38,17 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           </Box>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 ,display:'flex',alignContent:"left"}}>
-            Jumpstart
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 ,display:'flex',alignContent:"left",color:"#000000"}}>
+            JumpStart
           </Typography>
           
             <Link to={"/"}>
             <Button color="inherit" className='btn Home' sx={{
-              '&:hover': { color: "#fdca40" },
-              borderRadius:10,
+              '&:hover': { color: "#ae85ff",background:"none" },
+              borderRadius:3,
+              color: "#7F27FF",
               fontFamily: "Montserrat",
-              fontSize: 17,
-              color: "white",
+              fontSize: 15,
               margin:1,
               width: 100,
               display: { xs: 'none', md: 'flex' }
@@ -57,11 +57,11 @@ export default function ButtonAppBar() {
             
             <Link to={"/Login"}>
             <Button color="inherit" className='btn Login' sx={{
-              '&:hover': { backgroundColor: "#f79f1c" },
-              borderRadius:10,
+              '&:hover': { backgroundColor: "#DADCF2" },
+              borderRadius:3,
               fontFamily: "Montserrat",
-              fontSize: 17,
-              color: "white",
+              fontSize: 15,
+              color: "#7F27FF",
               margin:1,
               width: 100,
               display: { xs: 'none', md: 'flex' }
@@ -71,13 +71,14 @@ export default function ButtonAppBar() {
             <Link to={'/SignUp'}>
             <Button color="inherit" className='btn SignUp' 
             sx={{
-              '&:hover': { backgroundColor: "#6bb4e4" },
-              borderRadius:10,
+              '&:hover': { backgroundColor: "#c7ef00", color: "#ffffff" },
+              borderRadius:3,
               fontFamily: "Montserrat",
-              fontSize: 17,
+              fontSize: 15,
               margin:1,
               width: 100,
-              color: "white",
+              backgroundColor: "#c7ef00",
+              color: "#ffffff",
               display: { xs: 'none', md: 'flex' }
             }}>Sign Up</Button>
             </Link>
@@ -93,25 +94,25 @@ export default function ButtonAppBar() {
       anchor="top"
       onClose={() => setOpenDrawer(false)}
       PaperProps={{ 
-        sx: { backgroundColor: '#171738',
+        sx: { backgroundColor: '#ffffff',
         width: '100%'}
       }}
       
     >
         <IconButton aria-label="delete" size="small" onClick={() => setOpenDrawer(false)}
-        sx={{backgroundColor:"#171738",color:"#e3f1fa"}}>
+        sx={{backgroundColor:"#ffffff",color:"#7f27ff"}}>
         <CloseIcon fontSize="small" />
         </IconButton>
 
-      <Box display="flex" justifyContent="center" flexDirection="column"  alignItems="center" sx={{backgroundColor: "#171738"}}>
+      <Box display="flex" justifyContent="center" flexDirection="column"  alignItems="center" sx={{backgroundColor: "#ffffff"}}>
         
         <Link to={"/"}>
         <Button className='btnMenu' sx={{
-          '&:hover': { color: "#fdca40" },
-          borderRadius:10,
+          '&:hover': { color: "#c7ef00",backgroundColor:"#ffffff" },
+          borderRadius:3,
           fontFamily: "Montserrat",
-          fontSize: 18,
-          color: "white",
+          fontSize: 15,
+          color: "#7f27ff",
           width: 120,   
           margin: '5px'    
         }}>Home</Button>
@@ -119,11 +120,11 @@ export default function ButtonAppBar() {
        
         <Link to={"/Login"}>
         <Button className='btnMenu' sx={{
-          '&:hover': { backgroundColor: "#f79f1c" },
-          borderRadius:10,
+          '&:hover': { color: "#c7ef00",backgroundColor:"#ffffff" },
+          borderRadius:3,
           fontFamily: "Montserrat",
-          fontSize: 18,
-          color: "white",
+          fontSize: 15,
+          color: "#7f27ff",
           width: 120,
           margin: '5px'       
         }}>Login</Button>
@@ -131,11 +132,11 @@ export default function ButtonAppBar() {
 
         <Link to={'/SignUp'}>
           <Button className='btnMenu' sx={{
-          '&:hover': { backgroundColor: "#6bb4e4" },
-          borderRadius:10,
+          '&:hover': { color: "#c7ef00",backgroundColor:"#ffffff" },
+          borderRadius:3,
           fontFamily: "Montserrat",
-          fontSize: 18,
-          color: "white",
+          fontSize: 15,
+          color: "#7f27ff",
           width: 120,
           margin: '5px'  
           }}>Sign Up</Button> 

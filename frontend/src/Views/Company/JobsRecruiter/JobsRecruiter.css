@@ -1,0 +1,124 @@
+.jobs-page{
+    margin-top: 100px;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.jobs-page .jobs-page-content{
+    display: flex;
+}
+
+.jobs-page .jobs-page-text{
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.jobs-page .jobs-page-text .jobs-page-text-title{
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: start;
+}
+
+.jobs-page .jobs-page-text .jobs-page-text-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+.jobs-page .jobs-page-add-button{
+    align-self: flex-start;
+    margin-bottom: 20px;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #C7EF00;
+}
+
+.jobs-page .jobs-page-add-button:hover{
+    background-color: #F8F8FA;
+}
+
+.jobs-page .jobs-page-card{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    width: 37%;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.jobs-page .jobs-page-content .jobs-page-details{
+    margin-top: 30px;
+    margin-left: 10px;
+    max-height: 100vh;
+    width: 60%;
+}
+
+.jobs-page .jobs-page-card .candidate-card{
+    margin-left: 20px;
+}
+
+/*filters css*/
+.jobs-page .jobs-page-filters{
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.jobs-page .jobs-page-filters .jobs-page-filter-search-container{
+    display: flex;
+    width: 40%;
+    border-radius: 5px;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+}
+
+.jobs-page .jobs-page-filters .jobs-page-filter-location-container, 
+.jobs-page .jobs-page-filters .jobs-page-filter-job-type-container,
+.jobs-page .jobs-page-filters .jobs-page-filter-job-regime-container{
+    display: flex;
+    width: 17%;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+    margin-left: 10px;
+    
+}
+.jobs-page .jobs-page-filters #jobs-page-filter-search{
+    display: flex;
+}
+
+.jobs-page .jobs-page-filters  #jobs-page-filter-job-type,
+.jobs-page .jobs-page-filters #jobs-page-filter-job-regime,
+.jobs-page .jobs-page-filters #jobs-page-filter-location{
+    display: flex;
+    border-radius: 5px;
+    background-color: #F8F8FA;
+   
+}
+
+.jobs-page .jobs-page-filters .jobs-page-button-search{
+    background-color: #c7ef00; 
+    color: black;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.jobs-page .jobs-page-filters .jobs-page-button-search:hover{
+    background-color: #ae85ff;
+    color: #fff;
+}
+
+
+

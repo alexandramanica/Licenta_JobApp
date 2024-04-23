@@ -1,0 +1,78 @@
+.modal-recruiter-job .MuiBox-root{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff ;
+    z-index: 1000;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.modal-recruiter-job .modal-add-job-title{
+    font-size: 30px;
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.modal-recruiter-job .modal-add-job-advice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-family: 'Montserrat',sans-serif;
+    color: #000000;
+    font-weight: 500;
+}
+
+.modal-recruiter-job .add-job-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.modal-recruiter-job .add-job-container .input-add-job-div {
+    margin-bottom: 10px;
+    color: #7F27FF;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+}
+
+.modal-recruiter-job .add-job-container .input-add-job-div .input-add-job{
+    margin-top: 10px;
+    background-color: #F8F8FA;
+    width: 90%;
+    height:50px;
+    border-radius: 10px;
+}
+
+.modal-recruiter-job .button-add-job-div .button-add-job{
+    color: #7F27FF;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+@media (max-width: 790px) {
+    .modal-recruiter-job.MuiBox-root {
+      height: 100%;
+    }
+}

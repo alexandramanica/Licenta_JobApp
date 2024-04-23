@@ -1,3 +1,126 @@
+
+/*Home Page-header*/
+.homePage .home-page-hero-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.homePage .home-page-hero-container .home-page-hero-images,.homePage .home-page-hero-container .home-page-hero-text{
+    flex-basis: 50%;
+    position: relative;
+}
+
+
+.homePage .home-page-hero-container .home-page-hero-images .home-page-hero-image1{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px ;
+}
+
+.homePage .home-page-hero-container .home-page-hero-images .home-page-hero-image2{
+    width: 280px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 10px ;
+    box-shadow: 5px;
+    border: #f79f1c;
+}
+
+.homePage .home-page-hero-container .home-page-hero-images .home-page-hero-container-job-card{
+    position: absolute;
+    width: 300px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+
+}
+
+.homePage .home-page-hero-container .home-page-hero-text {
+    margin-top: 180px;
+    text-align: left;
+}
+
+.homePage .home-page-hero-container .home-page-hero-title {
+    margin-left: 50px;
+    font-size: 40px;
+}
+
+.homePage .home-page-hero-container .home-page-hero-title span {
+ color: #c7ef00;
+ text-decoration: underline;
+}
+
+.homePage .home-page-hero-container .home-page-hero-subtitle {
+    margin-left: 50px;
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.homePage .home-page-hero-container .home-page-hero-text .btn-home-page-hero-join{
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    cursor: pointer;
+    background-color: #c7ef00;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.homePage .home-page-hero-container .home-page-hero-text .btn-home-page-hero-learn{
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Montserrat",sans-serif;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+/*Home Page-Cards*/
+.homePage .home-page-cards-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.homePage .home-page-text-container {
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePage .home-page-text-container .home-page-text-container-subtitle{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #7F27FF;
+}
+
+.homePage .home-page-text-container .home-page-text-container-title{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #7F27FF;
+}
+
+/*HomePage-image*/
 .homePage .imageDiv{
     position: relative;
     width: 100%;
@@ -8,11 +131,11 @@
     align-items: flex-start;
     padding-left: 100px; 
     padding-right: 100px;
-    background-color: #171738;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
-.homePage .imageDiv img{
+.homePage .imageDiv video{
     position: absolute;
     width: 90%;
     height: 80%;
@@ -44,14 +167,14 @@
 
 .homePage .imageDiv .btn{
     position:relative;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 10px;
     font-size: 25px;
     font-weight: 600;
     font-family: "Montserrat",sans-serif;
     color: white;
     cursor: pointer;
-    background-image: linear-gradient(to left,#fdca40,#f79f1c,#fdca40);
+    background-image: linear-gradient(to left,#AE85FF,#7F27FF,#AE85FF);
     background-size: 200%;
     transition: 0.6s;
     padding: 8px;

@@ -7,9 +7,8 @@ import './Login.css';
 import '../../../App.css';
 
 import NavbarBF from '../../../Components/Common/NavbarBF/NavbarBF'
-import photoLogin from '../../../assets/pexels-buro-millennial-1438072.jpg'
-import videoLogin from '../../../assets/videoStudents.mp4'
-import logo from '../../../assets/JumpStart.png'
+import videoLogin from '../../../assets/assetsLoginRegister/videoStudents.mp4'
+import logo from '../../../assets/assetsLogo/JumpStartLogoGrey.png'
 import Alert from '@mui/material/Alert';
 
 import LockOpenIcon from '@mui/icons-material/LockOpen';
@@ -46,7 +45,7 @@ export default function Login() {
         localStorage.setItem('tokenRefresh', res.data.refreshToken);
         if (res.data.role==='student'){
         navigate("/CV")}
-        else{navigate('/Settings')}}
+        else{navigate('/DashboardRecruiter')}}
     }
     catch (error) {
       console.log('error', error);
@@ -100,8 +99,9 @@ export default function Login() {
       <div className="videoDiv">
       <video src={videoLogin} autoPlay loop muted />
         <div className="textDiv">
-          <h2 className="title">Welcome back</h2>
-          <p>Hi there</p>
+          <h2 className="title">Welcome back!</h2>
+          <p>Let's get you back on track towards your career goals. 
+            Please sign in to continue your job application journey.</p>
         </div>
 
         <div className="footerDiv flex">
@@ -115,7 +115,6 @@ export default function Login() {
       <div className="formDiv flex">
         <div className="headerDiv">
           <img src={logo} alt="logo" />
-          <h3>Welcome back!</h3>
           </div>
 
       

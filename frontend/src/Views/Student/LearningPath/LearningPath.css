@@ -1,0 +1,283 @@
+.learning-path-page{
+    margin-left: 280px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.learning-path-page .learning-path-page-text{
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    margin-bottom: 40px;
+    align-self: flex-start;
+}
+
+.learning-path-page .learning-path-page-text .learning-path-page-text-title{
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: start;
+}
+
+.learning-path-page .learning-path-page-text .learning-path-page-text-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+/*quiz taken*/
+.learning-path-page .learning-path-page-quiz-taken{
+    justify-content: start;
+    align-items: start;
+    text-align: justify;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-content{
+ display: flex;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-results{
+    text-align: start;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-results .learning-path-page-results-title{
+    color: #7f27ff;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-results .learning-path-page-results-path-title{
+    color: #ae85ff;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-results .learning-path-page-results-path-subtitle{
+    color: #000;
+    font-size: 1.2em;
+    text-align: justify;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/*roadmap*/
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 30px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap .learning-path-page-roadmap-title{
+    color: #7f27ff;
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/*roadmap cards*/
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap .learning-path-page-roadmap-cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .learning-path-page-roadmap-card{
+    border-radius: 5px;
+    border:2px solid #ae85ff;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    width: 20%;
+    padding: 5px 0px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .learning-path-page-roadmap-card .learning-path-page-roadmap-card-title{
+    color: #ae85ff;
+    text-decoration: underline #ae85ff;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .arrow{
+    color: #ae85ff;
+    font-size: 1.7em;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .learning-path-page-roadmap-card .learning-path-page-roadmap-card-subtitle{
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .learning-path-page-roadmap-card .learning-path-page-roadmap-card-button{
+    border: 2px solid #C7EF00;
+    color: #000;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1em;   
+    margin-top: 10px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap 
+.learning-path-page-roadmap-cards-container .learning-path-page-roadmap-card .learning-path-page-roadmap-card-button:hover{
+    background-color: #C7EF00;
+    color: #000;
+}
+
+/*roadmap module*/
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap .learning-path-page-roadmap-container-module{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module .learning-path-page-roadmap-container-module-title{
+    color: #c7ef00;
+    text-decoration: underline #c7ef00;
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module .learning-path-page-roadmap-container-text-module-description{
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-title{
+    color: #ae85ff;
+    text-decoration: underline #ae85ff;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-description{
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap
+.learning-path-page-roadmap-container-module .learning-path-page-roadmap-container-text-submodules
+.learning-path-page-roadmap-container-text-submodules-resources-title{
+    color: #000;
+    font-size: 1.6em;
+    font-weight: 800;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+/*resource */
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-resource{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 10px;
+    margin-right: 50px;
+    text-align: justify;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-resources-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-resources-container
+.learning-path-page-roadmap-container-text-submodules-resource .learning-path-page-roadmap-container-text-submodules-resource-text-title{
+    color: #7f27ff;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-resources-container
+.learning-path-page-roadmap-container-text-submodules-resource .learning-path-page-roadmap-container-text-submodules-resource-text-description{
+    color: #000;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-roadmap-container-module 
+.learning-path-page-roadmap-container-text-submodules .learning-path-page-roadmap-container-text-submodules-resources-container
+.learning-path-page-roadmap-container-text-submodules-resource .learning-path-page-roadmap-container-text-submodules-resource-text
+.learning-path-page-roadmap-container-text-submodules-resource-text-link{
+    color: #ff8911;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+/*quiz not taken*/
+.learning-path-page .learning-path-page-quizz-not-taken{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.learning-path-page .learning-path-page-quizz-not-taken .learning-path-page-quizz-not-taken-title{
+    color: #ae85ff;
+    text-align: start;
+}
+
+.learning-path-page .learning-path-page-quizz-not-taken .learning-path-page-quizz-not-taken-subtitle{
+    color: #000;
+    margin-top: 10px;
+    text-align: start;
+    font-size: 1.3em;
+}
+
+.learning-path-page .learning-path-page-quizz-not-taken .learning-path-page-quizz-not-taken-button{
+    margin-top: 20px;
+    background-color: #ae85ff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Montserrat',sans-serif;
+    cursor: pointer;
+}

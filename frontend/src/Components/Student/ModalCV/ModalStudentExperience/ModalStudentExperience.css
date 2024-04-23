@@ -1,0 +1,113 @@
+.modal-student-experience .MuiBox-root{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff ;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.modal-student-experience .add-experience-title{
+    font-size: 30px;
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.modal-student-experience .add-experience-advice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-family: 'Montserrat',sans-serif;
+    color: #000000;
+    font-weight: 500;
+}
+
+.modal-student-experience .add-experience-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.modal-student-experience .add-experience-container .input-add-experience-div {
+    margin-bottom: 10px;
+    color: #7F27FF;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+}
+
+.modal-student-experience .add-experience-container .input-add-experience-div .input-add-experience{
+    margin-top: 10px;
+    background-color: #F8F8FA;
+    width: 90%;
+    height:50px;
+    border-radius: 10px;
+}
+
+.modal-student-experience .add-experience-container .date-add-experience-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-student-experience .add-experience-container .date-add-experience-div .date-picker-add-experience{
+    width: 80%;
+    margin-top: 10px;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+    color: #d6efff;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.modal-student-experience .modal-student-experience .MuiBox-root{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #171738 ;
+    z-index: 1000;
+}
+
+
+.modal-student-experience .add-experience-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+
+@media (max-width: 790px) {
+    .modal-student-experience .MuiBox-root {
+      height: 100%;
+    }
+}
+
+

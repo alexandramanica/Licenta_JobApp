@@ -1,0 +1,68 @@
+.MuiDrawer-paper{
+    position: fixed;
+    width: 220px ;
+    height: 100%;
+}   
+
+.sidebar-student .row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    color: #dadcf2;
+    list-style-type: none;
+    margin: 0;
+} 
+
+.sidebar-student #title{
+    flex: 80%;
+    font-size: 15px;
+}
+
+.sidebar-student #icon{
+    flex: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.link-class:hover{
+    color: #dadcf2;
+    cursor: pointer;
+}
+
+#menu-title{
+    padding:5px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link-class{
+    color:#dadcf2;
+    font-size: 15px;
+}
+
+.link-class:hover{
+    color: #dadcf2;
+}
+
+.sidebar-student .MuiButton-root{
+    background-color: #000000;
+    color:#dadcf2;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 18rem;
+}
+
+.sidebar-student .MuiButton-root:hover{
+    background-color: #000000;
+    color: #dadcf2;
+}
+

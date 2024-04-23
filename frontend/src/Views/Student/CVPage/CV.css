@@ -10,7 +10,7 @@
 /*Personal details styling*/
 .personal-details-container .personal-details-title{
     font-family: 'Montserrat',sans-serif;
-    color: #d6efff;
+    color: #C7EF00;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -43,14 +43,14 @@
     margin-top: 20px;
     font-size: 15px;
     font-family: 'Montserrat',sans-serif;
-    color: #d6efff;
+    color: #7F27FF;
     font-weight: 600;
 }
 
 .personal-details-container .personal-details-input{
     margin-top: 10px;
-    background-color: #212152;
-    color: #d6efff !important;
+    background-color: #F8F8FA;
+    color: #7F27FF !important;
     font-family: 'Montserrat',sans-serif !important;
     width: 100%;
     height:50px;
@@ -60,13 +60,13 @@
 }
 
 .MuiInputBase-input::placeholder{
-    color: #d6efff !important;
+    color: #7F27FF !important;
     font-size: 15px;
     font-family: 'Montserrat',sans-serif;
 }
 
 .MuiInputBase-input{
-    color: #d6efff !important;
+    color: #000000 !important;
     font-size: 15px !important;
     font-family: 'Montserrat',sans-serif !important;
 }
@@ -77,8 +77,8 @@
     align-items: flex-start;
     justify-content: center;
     margin-left: 300px;
-    background-color: #f79f1c;
-    color: #d6efff;
+    background-color: #C7EF00;
+    color: #000000;
     font-family: 'Montserrat',sans-serif;
     font-weight: 800;
     font-size: 15px;
@@ -86,11 +86,11 @@
 }
 
 .container-cv .btn-save-cv:hover{
-    background-color: #fdca40;
+    background-color: #AE85FF;
 }
 
 /*Education styling*/
-.education-container{
+.education-container, .experience-container, .language-container{
     margin-top: 50px;
     margin-left: 300px;
     display: flex;
@@ -98,18 +98,20 @@
     width: 70%;
 }
 
-.education-container .education-title{
+.education-container .education-title, .experience-container .experience-title,
+.language-container .language-title {
     font-family: 'Montserrat',sans-serif;
-    color: #d6efff;
+    color: #C7EF00;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 5px;
     align-self: flex-start;
 }
 
-.education-container .education-add-button{
+.education-container .education-add-button, .experience-container .experience-add-button, 
+.language-container .language-add-button {
     align-self: flex-start;
     margin-bottom: 20px;
     font-family: 'Montserrat',sans-serif;
-    color: #d6efff;
+    color: #C7EF00;
 }

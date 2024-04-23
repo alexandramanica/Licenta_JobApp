@@ -5,6 +5,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import SchoolIcon from '@mui/icons-material/School';
+import SummarizeIcon from '@mui/icons-material/Summarize';
 
 export const SidebarStudentData = Object.freeze([
     {
@@ -18,10 +19,10 @@ export const SidebarStudentData = Object.freeze([
         icon:<AssignmentIndIcon/>
     },
     {
-        path:"/AppliedJobs",
-        name:"Applied Jobs",
-        icon:<BookmarkBorderIcon/>
-    },
+        path:"/JobsPage",
+        name:"Jobs",
+        icon:<WorkIcon/>,
+    },   
     {
         path:"/LearningPath",
         name:"Learning Path",

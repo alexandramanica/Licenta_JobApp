@@ -1,0 +1,104 @@
+.candidates-page{
+    margin-top: 100px;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.candidates-page .candidates-page-text{
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.candidates-page .candidates-page-text .candidates-page-text-title{
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: start;
+}
+
+.candidates-page .candidates-page-text .candidates-page-text-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+.candidates-page .candidates-page-container {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+}
+
+.candidates-page .candidates-page-container .candidates-container-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+    border-radius: 10px;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+
+.candidates-page .candidates-page-container .candidate-page-about-canidate {
+    margin-left: 20px;
+    max-height: 100vh;
+    width: 60%; 
+}
+
+/*filters*/
+.candidates-page .candidates-page-filters{
+    margin-top: 20px;
+    display: flex;
+    width: 96%;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.candidates-page .candidates-page-filters .candidates-page-filter-search-container{
+    display: flex;
+    width: 65%;
+    border-radius: 5px;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+}
+
+.candidates-page .candidates-page-filters #candidates-page-filter-search{
+    display: flex;
+}
+
+.candidates-page .candidates-page-filters .candidates-page-filter-location-container{
+    display: flex;
+    width: 28%;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+    margin-left: 10px;
+    
+}
+
+.candidates-page .candidates-page-filters #candidates-page-filter-location{
+    display: flex;
+    border-radius: 5px;
+    background-color: #F8F8FA;
+}
+
+.candidates-page .candidates-page-filters .candidates-page-button-search{
+    background-color: #7f27ff; 
+    color: #fff;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.candidates-page .candidates-page-filters .candidates-page-button-search:hover{
+    background-color: #ae85ff;
+    color: #fff;
+}

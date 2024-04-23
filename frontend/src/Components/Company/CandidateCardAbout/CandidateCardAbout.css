@@ -1,0 +1,131 @@
+.recruiter-about-candidate .recruiter-about-candidate-paper{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-container{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-name {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #7f27ff;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-container .recruiter-about-candidate-contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-container .recruiter-about-candidate-container-location{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-container .recruiter-about-candidate-contact-info .recruiter-about-candidate-container-email,
+.recruiter-about-candidate .recruiter-about-candidate-paper .recruiter-about-candidate-container .recruiter-about-candidate-contact-info .recruiter-about-candidate-container-telephone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #dadcf2;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    justify-content: space-between;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-about-title{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ae85ff;
+    margin-top: 10px;
+}
+
+/*education*/
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-education-container .recruiter-about-candidate-education-info-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+} 
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-education-container
+.recruiter-about-candidate-education-info-container .recruiter-about-candidate-education-info-container-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 5px 0px;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-education-container
+.recruiter-about-candidate-education-info-container .recruiter-about-candidate-education-info-container-details{
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-education-container
+.recruiter-about-candidate-education-info-container .recruiter-about-candidate-education-info-container-details p{
+    background-color: #F8F8FA;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*experience*/
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-experience-container .recruiter-about-candidate-experience-info-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+} 
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-experience-container
+.recruiter-about-candidate-experience-info-container .recruiter-about-candidate-experience-info-container-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-experience-container
+.recruiter-about-candidate-experience-info-container .recruiter-about-candidate-experience-info-container-companyName{
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 5px 0px;
+}
+
+/*Language*/
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-language-container .recruiter-about-candidate-language-info-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+} 
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-language-container
+.recruiter-about-candidate-language-info-container .recruiter-about-candidate-language-info-container-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.recruiter-about-candidate .recruiter-about-candidate-container .recruiter-about-candidate-language-container
+.recruiter-about-candidate-language-info-container .recruiter-about-candidate-language-info-container-proficiency{
+    font-size: 1em;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+

@@ -16,8 +16,11 @@ export default function NavbarStudent() {
       <AppBar
         position="fixed"
         sx={{ display: { xs: 'none', md: 'block' },
-              width: { md: 'calc(100% - 250px)' },
-              ml: { md: '250px' } }}
+              width: { md: 'calc(100% - 220px)' },
+              ml: { md: '220px' },
+              backgroundColor: 'white',
+              boxShadow:'none',
+              borderBottom: '1px solid #f1f1f1',}}
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
