@@ -2,6 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import env from 'dotenv';
 
+import multer from 'multer';
+import { createWorker } from 'tesseract.js';
+import * as pdfLib from 'pdf-lib';
+import fs from 'fs';
+import path from 'path';
+
 import DB_Init from './src/Entities/db_init.js';
 import masterRouter from  './src/Routes/masterRoute.js';
 import authRoute from './src/Routes/authRoutes.js';
@@ -18,6 +24,7 @@ import quizTakeRouter from './src/Routes/QuizTakeRoutes.js';
 
 env.config();
 
+let worker = createWorker();
 let app = express();
 
 app.use(express.json());
@@ -28,7 +35,6 @@ app.use(express.urlencoded({
 
 
 //initializare bd + rute
-
 DB_Init();
 app.use("/api", masterRouter);
 app.use("/api", authRoute);
@@ -42,6 +48,8 @@ app.use('/api', jobRoute)
 app.use('/api', savedJobRouter)
 app.use('/api', jobApplicationRouter)
 app.use('/api', quizTakeRouter)
+
+//gestionare fisiere
 
 let port = /*process.env.PORT ||*/ 8001;   
 app.listen(port);

@@ -11,6 +11,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Alert from '@mui/material/Alert';
 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import WorkIcon from '@mui/icons-material/Work';
@@ -20,6 +21,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
+import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
 
 import './JobCardAbout.css'
 import CandidateDrawerProfile from '../CandidateDrawerProfile/CandidateDrawerProfile.jsx';
@@ -32,6 +34,7 @@ const [candidates, setCandidates] = useState([]);
 const [selectedCandidate, setSelectedCandidate] = useState(null);
 const [filteredCandidates, setFilteredCandidates] = useState([]);
 const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+const [showAlert, setShowAlert] = useState(false);
 
 const handleOpenDrawer= (candidate) => {
   setSelectedCandidate(candidate);
@@ -83,6 +86,30 @@ const handleOpenDrawer= (candidate) => {
       } else {
         setFilteredCandidates(candidates);
       }
+    }
+  };
+
+  const generateCV= async(studentId) =>{
+      const token = localStorage.getItem('tokenAcces');
+      const userId= getUserDataFromToken().userId;
+
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+
+      try {
+      const response = await axiosJWT.get(
+        `http://localhost:8001/api/student/generate-cv/${studentId}`,
+        {headers : {'Authorization' : `Bearer ${token}`}}
+      );
+
+      if (response.data) {
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 10000);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -210,6 +237,9 @@ const handleOpenDrawer= (candidate) => {
                                     <Button endIcon={<ContactMailIcon />} 
                                             className='recruiter-about-job-table-button-profile'
                                             onClick={()=>handleOpenDrawer(candidate)}>Details</Button>
+                                    <Button endIcon={<SimCardDownloadIcon />}
+                                            className='recruiter-about-job-table-button-download-cv'
+                                            onClick={() => generateCV(candidate.studentId)}>Download CV</Button>
                                 </TableCell>
 
                                 </TableRow>
@@ -224,9 +254,15 @@ const handleOpenDrawer= (candidate) => {
                             candidate={selectedCandidate}
                           />
                         </div>
+                    <div className='alert-container'>
+                      {showAlert  && <Alert severity="success" className='alert' onClose={() => setShowAlert(false)}>You've succesfully downloaded this candidate CV!</Alert>}
+                    </div>
                 </div>
+                 
             )}
+         
         </Paper>
+    
     </div>
   )
 }

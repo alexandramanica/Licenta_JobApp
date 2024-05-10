@@ -3,9 +3,11 @@ import {
     getJobById,
     getJobs,
     getJobsByRecruiterId,
+    getJobsByPostedDate,
     createJob,
     updateJob,
     upsertJob,
+    countJobsByRecruiterId,
     deleteJob
 } from '../DataAcces/jobDA.js';
 
@@ -55,6 +57,24 @@ jobRouter.get('/job/recruiterId/:recruiterId', async (req, res) => {
     try {
       const jobs = await getJobsByRecruiterId(req.params.recruiterId);
       res.json(jobs);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+});
+
+jobRouter.get('/job/postingDate/:recruiterId', async (req, res) => {
+    try {
+      const jobs = await getJobsByPostedDate(req.params.recruiterId);
+      res.json(jobs);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+});
+
+jobRouter.get('/job/count/:recruiterId', async (req, res) => {
+    try {
+      const count = await countJobsByRecruiterId(req.params.recruiterId);
+      res.json({ count });
     } catch (error) {
       res.status(500).json({ message: error.message });
     }

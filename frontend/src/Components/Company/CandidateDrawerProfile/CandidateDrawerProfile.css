@@ -50,6 +50,30 @@
     justify-content: space-between;
 }
 
+.recruiter-about-candidate-drawer  .recruiter-about-candidate-drawer-container .recruiter-about-candidate-drawer-download-cv{
+    align-items: center;
+    margin-right: 10px;
+    border: 2px solid #c7ef00;
+    color:#000;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.recruiter-about-candidate-drawer  .recruiter-about-candidate-drawer-container .recruiter-about-candidate-drawer-download-cv:hover{
+    background-color: #c7ef00;
+}
+
+.recruiter-about-candidate-drawer  .recruiter-about-candidate-drawer-container .recruiter-about-candidate-drawer-contact-info .recruiter-about-candidate-drawer-download-cv:hover{
+    background-color: #7f27ff;
+    color: #fff;
+}
+
 .recruiter-about-candidate-drawer .recruiter-about-candidate-drawer-container .recruiter-about-candidate-drawer-about-title{
     font-size: 1.5em;
     font-weight: 700;

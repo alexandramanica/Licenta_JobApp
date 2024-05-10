@@ -51,8 +51,6 @@ export default function Settings() {
   return (
     <div>
       <Sidebar />
-      <NavbarStudentMD />
-      <NavbarStudentXS/>
       
       <h3 className="settings-title">Settings</h3>
 

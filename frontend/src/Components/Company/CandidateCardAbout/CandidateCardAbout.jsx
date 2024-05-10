@@ -1,5 +1,8 @@
 import React from 'react'
 import Paper from '@mui/material/Paper';
+import  Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
+import  IconButton  from '@mui/material/IconButton';
 
 import{ useState } from 'react';
 import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
@@ -8,6 +11,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import WorkIcon from '@mui/icons-material/Work';
+import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
 
 import './CandidateCardAbout.css';
 
@@ -16,6 +20,7 @@ export default function CandidateCardAbout({student,showMoreCandidate}) {
    const [educations, setEducations] = useState([])
    const [experiences, setExperiences] = useState([])
    const [languages, setLanguages] = useState([]);
+   const [showAlert, setShowAlert] = useState(false);
 
    React.useEffect(() => {
     if (!student) {
@@ -81,9 +86,33 @@ export default function CandidateCardAbout({student,showMoreCandidate}) {
         console.log('error', error);
       }
     };
-  
+
     fetchData();
   }, [student]);
+
+  const generateCV= async(studentId) =>{
+    const token = localStorage.getItem('tokenAcces');
+    const userId= getUserDataFromToken().userId;
+
+    if (!token) {
+      console.error('Token not found in localStorage');
+      return;
+    }
+
+    try {
+    const response = await axiosJWT.get(
+      `http://localhost:8001/api/student/generate-cv/${studentId}`,
+      {headers : {'Authorization' : `Bearer ${token}`}}
+    );
+
+    if (response.data) {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 10000);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
   
   React.useEffect(() => {
     console.log("User", user);
@@ -112,7 +141,8 @@ export default function CandidateCardAbout({student,showMoreCandidate}) {
                         <CallIcon />
                         <h5 className='recruiter-about-candidate-telephone'>{student.phoneNumber}</h5>
                     </div>
-                </div>
+                 </div>
+                 <Button className='recruiter-about-candidate-download-cv' endIcon={<SimCardDownloadIcon/>}  onClick={() => generateCV(student.studentId)}>Download CV</Button>
                 <h3 className='recruiter-about-candidate-about-title'>About candidate</h3>
                 <p className='recruiter-about-candidate-about'>{student.aboutStudent}</p>
                 <div className='recruiter-about-candidate-education-container'>
@@ -172,6 +202,9 @@ export default function CandidateCardAbout({student,showMoreCandidate}) {
                             <p className='recruiter-about-candidate-language-info-container-proficiency'>{language.proficiencyLevel}</p>
                         </div>
                     ))}
+                </div>
+                <div className='alert-container'>
+                  {showAlert  && <Alert severity="success" className='alert' onClose={() => setShowAlert(false)}>You've succesfully downloaded this candidate CV!</Alert>}
                 </div>
             </div>
         </Paper>

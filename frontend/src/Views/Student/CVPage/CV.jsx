@@ -311,8 +311,6 @@ const saveDataExperience = async (newStudentExperience) => {
     return (
       <div  className="container-cv">
         <Sidebar />
-        <NavbarStudentMD />
-        <NavbarStudentXS />
 
         <div className="personal-details-container">
           <h3 className='personal-details-title'>Personal Details</h3>

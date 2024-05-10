@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import Drawer from '@mui/material/Drawer';
+import  Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
+import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
 
 import './CandidateDrawerProfile.css';
 import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
@@ -14,6 +17,31 @@ export default function CandidateDrawerProfile({candidate,isOpen,onClose}) {
   const [educations, setEducations] = useState([])
   const [experiences, setExperiences] = useState([])
   const [languages, setLanguages] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const generateCV= async(studentId) =>{
+    const token = localStorage.getItem('tokenAcces');
+    const userId= getUserDataFromToken().userId;
+
+    if (!token) {
+      console.error('Token not found in localStorage');
+      return;
+    }
+
+    try {
+    const response = await axiosJWT.get(
+      `http://localhost:8001/api/student/generate-cv/${studentId}`,
+      {headers : {'Authorization' : `Bearer ${token}`}}
+    );
+
+    if (response.data) {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 10000);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 React.useEffect(() => {
 
@@ -134,6 +162,9 @@ if (!candidate) {
                         <h5 className='recruiter-about-candidate-drawer-telephone'>{candidate.phoneNumber}</h5>
                     </div>
                 </div>
+                <div>
+                  <Button className='recruiter-about-candidate-drawer-download-cv' endIcon={<SimCardDownloadIcon/>}  onClick={() => generateCV(candidate.studentId)}>Download CV</Button>
+                </div>
                 <h3 className='recruiter-about-candidate-drawer-about-title'>About candidate</h3>
                 <p className='recruiter-about-candidate-drawer-about'>{candidate.aboutStudent}</p>
                 <div className='recruiter-about-candidate-drawer-education-container'>
@@ -193,6 +224,9 @@ if (!candidate) {
                             <p className='recruiter-about-candidate-drawer-language-info-container-proficiency'>{language.proficiencyLevel}</p>
                         </div>
                     ))}
+                </div>
+                <div className='alert-container'>
+                  {showAlert  && <Alert severity="success" className='alert' onClose={() => setShowAlert(false)}>You've succesfully downloaded this candidate CV!</Alert>}
                 </div>
             </div>
         </Drawer>

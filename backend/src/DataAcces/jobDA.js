@@ -18,6 +18,18 @@ async function getJobsByRecruiterId(recruiterId){
     });
 }
 
+async function getJobsByPostedDate(recruiterId){
+    return await Job.findAll({
+        where: {
+            recruiterId: recruiterId
+        },
+        order: [
+            ['jobDate', 'DESC']
+        ],
+        limit: 3
+    });
+}
+
 async function createJob(jobData){
     try {
         console.log('Received data', jobData);
@@ -56,6 +68,13 @@ async function upsertJob(jobData){
     }
 }
 
+async function countJobsByRecruiterId(recruiterId){
+    return await Job.count({
+        where: {
+            recruiterId: recruiterId
+        }
+    });
+}
 
 async function deleteJob(id) {
     try {
@@ -71,4 +90,4 @@ async function deleteJob(id) {
     }
 }
 
-export { getJobs, getJobById, createJob, updateJob, upsertJob, getJobsByRecruiterId, deleteJob};
+export { getJobs, getJobById, createJob, updateJob, upsertJob, getJobsByRecruiterId, deleteJob, getJobsByPostedDate, countJobsByRecruiterId};

@@ -1,6 +1,5 @@
 .learning-path-page{
     margin-left: 280px;
-    margin-top: 50px;
     margin-right: 50px;
 }
 
@@ -60,6 +59,26 @@
     text-align: justify;
     font-weight: 300;
     margin-top: 10px;
+}
+
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-take-again-button{
+    margin-top: 10px;
+    background-color: #c7ef00;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    font-family: 'Montserrat',sans-serif;
+    cursor: pointer;
+}
+.learning-path-page .learning-path-page-quiz-taken .learning-path-page-take-again-text{
+    margin-top: 20px;
+    color: #7f27ff;
+    font-size: 1.8em;
+    font-weight: 800;
+
 }
 
 /*roadmap*/

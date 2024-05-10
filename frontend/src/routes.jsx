@@ -4,6 +4,7 @@ import Dashboard from "./Views/Student/DashboardPage/Dashboard";
 import LearningPath from "./Views/Student/LearningPath/LearningPath.jsx"; 
 import JobsPage from "./Views/Student/JobsPage/JobsPage.jsx";
 import QuizPage from'./Views/Student/QuizPage/QuizPage.jsx';
+import TipsTricksPage from './Views/Student/Tips&TricksPage/TipsTricksPage.jsx'
 
 import DashboardRecruiter from "./Views/Company/DashboardRecruiter/DashboardRecruiter.jsx";
 import SettingsRecruiter from "./Views/Company/SettingsRecruiter/SettingsRecruiter.jsx";
@@ -45,6 +46,11 @@ export const routes=Object.freeze([
     path:"/QuizPage",
     component:QuizPage,
     name:"QuizPage"
+},
+{
+    path:"/TipsTricksPage",
+    component:TipsTricksPage,
+    name:"TipsTricksPage"
 },{
     path:"/SignUp",
     component:SignUp,

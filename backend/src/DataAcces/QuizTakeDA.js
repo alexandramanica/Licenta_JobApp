@@ -53,5 +53,37 @@ async function getQuizTakeByStudentId(studentId){
     }
 }
 
-export { getQuizTakes, getQuizTakeById, createQuizTake, upsertQuizTake, getQuizTakeByStudentId };
+
+async function countQuizTakes(){
+    try{
+        return await QuizTake.count();}
+    catch{
+        throw new Error('Error counting quiz takes');
+    }   
+}
+
+async function countStudentsByPath() {
+    try {
+        const totalQuizTakes = await QuizTake.count();
+        if (totalQuizTakes === 0) throw new Error('No quiz takes found');
+
+        const maxEngineeringPoints = await QuizTake.max('EngineeringPath');
+        const maxDataPoints = await QuizTake.max('DataPath');
+
+        const engineeringCount = await QuizTake.count({
+            where: { EngineeringPath: maxEngineeringPoints }
+        });
+
+        const dataCount = await QuizTake.count({
+            where: { DataPath: maxDataPoints }
+        });
+
+        return { engineeringCount, dataCount };
+    } catch (error) {
+        console.error('Error counting students by path:', error);
+        throw error;
+    }
+}
+
+export { getQuizTakes, getQuizTakeById, createQuizTake, upsertQuizTake, getQuizTakeByStudentId, countQuizTakes, countStudentsByPath };
 

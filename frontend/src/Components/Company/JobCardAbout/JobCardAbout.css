@@ -168,6 +168,33 @@
     background-color: #ae85ff;
   }
 
+  .recruiter-about-job .recruiter-about-job-table .recruiter-about-job-table-button-download-cv{
+    background-color: #c7ef00;
+    color:#000;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 7px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }  
+
+  .recruiter-about-job .recruiter-about-job-table .recruiter-about-job-table-button-download-cv:hover{
+    background-color: #ae85ff;
+    color:white;
+  }
+
+  .recruiter-about-job .alert-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    z-index: 1000; 
+  }
+
 
 
 

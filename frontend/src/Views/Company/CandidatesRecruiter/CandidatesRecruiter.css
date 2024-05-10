@@ -1,6 +1,5 @@
 .candidates-page{
-    margin-top: 100px;
-    margin-left: 250px;
+    margin-left: 280px;
     display: flex;
     flex-direction: column;
 }

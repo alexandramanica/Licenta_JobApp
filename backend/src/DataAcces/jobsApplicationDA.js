@@ -17,31 +17,39 @@ async function getStudentsByJobId(jobId) {
     const jobApplications = await JobApplication.findAll({ where: { jobId: jobId } });
     const studentIds = jobApplications.map(jobApplication => jobApplication.studentId);
     return await Student.findAll({ where: { studentId: studentIds } });
+
 }
 
 async function createJobsApplication(jobsApplicationData) {
     return await JobApplication.create(jobsApplicationData);
 }
 
+
 async function getTopJobsByApplicants() {
-    Job.findAll({
-        attributes: ['id', 'jobTitle', [sequelize.fn('COUNT', sequelize.col('Students.id')), 'applicantCount']],
-        include: [{
-          model: Student,
-          through: JobApplication,
-          as: DB_APPLIED_JOBS_JOBS_ID,
-          attributes: [] // To exclude student attributes
-        }],
-        group: ['Job.id', 'jobTitle'], // Group by Job.id and jobTitle
-      })
-      .then(jobs => {
-        jobs.forEach(job => {
-          console.log(`Job ${job.jobTitle} has ${job.getDataValue('applicantCount')} applicants.`);
-        });
-      })
-      .catch(err => {
-        console.error('Error fetching jobs:', err);
+  try {
+      const jobs = await Job.findAll({
+          attributes: ['jobId', 'jobTitle', [Sequelize.fn('COUNT', Sequelize.col('applied_jobs_jobs->JobApplication.studentId')), 'applicantCount']],
+          include: [{
+              model: Student,
+              through: JobApplication,
+              as: DB_APPLIED_JOBS_JOBS_ID,
+              attributes: [] 
+          }],
+          group: ['jobId'], 
       });
+
+      const sortedJobs = jobs.sort((a, b) => b.applicantCount - a.applicantCount);
+      const topJobs = jobs.slice(0, 5);
+
+      topJobs.forEach(job => {
+        const plainJob = job.get({ plain: true }); 
+        console.log(plainJob);
+      });
+
+      return topJobs;
+  } catch (err) {
+      console.error('Error fetching jobs:', err);
+  }
 }
 
 export { getJobsApplicationByUserId, createJobsApplication, getStudentsByJobId, getTopJobsByApplicants };

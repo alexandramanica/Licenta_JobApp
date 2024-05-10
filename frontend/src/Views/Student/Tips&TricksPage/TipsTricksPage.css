@@ -1,0 +1,51 @@
+.student-tips-tricks{
+    margin-left: 280px;
+    margin-top: 20px;
+}
+
+.student-tips-tricks .student-tips-tricks-text{
+    font-family: 'Montserrat',sans-serif;
+    color: #C7EF00;
+    align-self: flex-start;
+}
+
+.student-tips-tricks .student-tips-tricks-text .student-tips-tricks-text-title{
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: start;
+}
+
+.student-tips-tricks .student-tips-tricks-text .student-tips-tricks-text-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+ 
+.student-tips-tricks .student-tips-tricks-container{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.student-tips-tricks .student-tips-tricks-container .student-tips-tricks-container-tip-title{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color:#7f27ff;
+    font-size: 1.75em;
+}
+
+.student-tips-tricks .student-tips-tricks-container .student-tips-tricks-container-tip-subtitle{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+}
+
+.student-tips-tricks .student-tips-tricks-container {
+    margin-bottom: 20px;
+}
+

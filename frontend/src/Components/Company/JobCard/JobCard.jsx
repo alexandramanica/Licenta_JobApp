@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
@@ -13,9 +15,14 @@ import LaptopChromebook from '@mui/icons-material/LaptopChromebook';
 import {getUserDataFromToken, axiosJWT} from '../../../Views/tokenPrep';
 import './JobCard.css'
 
-export default function JobCard({job,showMoreJob}) {
+export default function JobCard({job,showMoreJob, showButton}) {
   const jobDate = new Date(job.jobDate);
   const formattedDate = `${jobDate.toLocaleString('default', { month: 'long' })} ${jobDate.getDate()}, ${jobDate.getFullYear()}`;
+  const navigate=useNavigate();
+
+  const navigateJobs=() => {
+    navigate(`/JobsRecruiter`);
+  }
   return (
     <div className='job-card'>
       <Card className='job-card-container'>
@@ -40,11 +47,15 @@ export default function JobCard({job,showMoreJob}) {
             </div>
 
           </div>
-
-            <div className="job-card-button-container">
+          {showButton ? (
+          <div className="job-card-button-container">
               <Button variant='outlined' endIcon={<VisibilityIcon />} className='job-card-button-show'  onClick={() => showMoreJob(job)}>Show more</Button>
             </div>
-
+          ) : (
+            <div className="job-card-button-container">
+              <Button variant='outlined' endIcon={<WorkIcon />} className='job-card-button-show'  onClick={navigateJobs}>Go to Jobs page</Button>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

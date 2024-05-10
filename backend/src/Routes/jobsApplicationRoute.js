@@ -30,11 +30,11 @@ jobApplicationRouter.get('/jobApplication/studentsByJob/:jobId', async (req, res
     }
 });
 
-jobApplicationRouter.get('/jobsApplication/top', async (req, res) => {
+jobApplicationRouter.get('/jobApplication/top', async (req, res) => {
     try {
         console.log('top');
-        // const topJobs = await getTopJobsByApplicants();
-        // res.json(topJobs);
+        const topJobs = await getTopJobsByApplicants();
+        res.json(topJobs);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

@@ -1,7 +1,6 @@
 /*General page styling*/
 .personal-details-container{
-    margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 280px;
     display: flex;
     flex-direction: column;
     
@@ -11,8 +10,9 @@
 .personal-details-container .personal-details-title{
     font-family: 'Montserrat',sans-serif;
     color: #C7EF00;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top:20px;
     margin-bottom: 10px;
     align-self: flex-start;
 }
@@ -76,11 +76,12 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    margin-left: 300px;
+    margin-left: 280px;
     background-color: #C7EF00;
     color: #000000;
     font-family: 'Montserrat',sans-serif;
     font-weight: 800;
+    padding:10px;
     font-size: 15px;
     margin-bottom: 20px;
 }
@@ -92,7 +93,7 @@
 /*Education styling*/
 .education-container, .experience-container, .language-container{
     margin-top: 50px;
-    margin-left: 300px;
+    margin-left: 280px;
     display: flex;
     flex-direction: column;
     width: 70%;

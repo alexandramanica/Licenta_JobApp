@@ -1,0 +1,78 @@
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.dashboard-container .dashboard-container-text{
+    font-family: 'Montserrat',sans-serif;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.dashboard-container .dashboard-container-text .dashboard-container-text-title{
+    margin-top: 20px;
+    font-size: 3em;
+    color: #C7EF00;
+    font-weight: 700;
+    text-align: start;
+}
+
+.dashboard-container .dashboard-container-text .dashboard-container-text-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+.dashboard-container .dashboard-cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%
+}
+
+.dashboard-container .dashboard-bar-chart,
+.dashboard-container .dashboard-pie-chart{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.dashboard-container .dashboard-bar-chart .dashboard-bar-chart-text-container,
+.dashboard-container .dashboard-pie-chart .dashboard-pie-chart-text-container{
+    font-family: 'Montserrat',sans-serif;
+    text-align: start;
+    width: 450px;
+    margin-top: 10px;
+}
+
+.dashboard-container .dashboard-pie-chart .dashboard-pie-chart-text-container{
+     margin-left: 30px;}
+
+.dashboard-container .dashboard-bar-chart .dashboard-bar-chart-text-container .dashboard-bar-chart-text-container-title,
+.dashboard-container .dashboard-pie-chart .dashboard-pie-chart-text-container .dashboard-pie-chart-text-container-title,
+.dashboard-container .dashboard-cards-title{
+    font-size: 1.8em;
+    color: #7f27ff;
+    text-decoration: underline;
+    font-weight: 800;
+    text-align: start;
+    
+}
+.dashboard-container .dashboard-bar-chart .dashboard-bar-chart-text-container .dashboard-bar-chart-text-container-subtitle,
+.dashboard-container .dashboard-pie-chart .dashboard-pie-chart-text-container .dashboard-pie-chart-text-container-subtitle,
+.dashboard-container .dashboard-cards-subtitle{
+    font-size: 1.1em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}

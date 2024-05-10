@@ -1,5 +1,5 @@
 import express from 'express';
-import { getSavedJobsByUserId, createSavedJob, deleteSavedJob } from '../DataAcces/savedJobsDA.js';
+import { getSavedJobsByUserId, createSavedJob, deleteSavedJob, getTopJobsBySaves } from '../DataAcces/savedJobsDA.js';
 
 const savedJobRouter = express.Router();
 
@@ -28,6 +28,16 @@ savedJobRouter.delete('/savedJob/:studentId/:jobId', async (req, res) => {
         res.json({ message: 'Job deleted' });
     } catch (err) {
         console.error(`Error deleting job: ${err.message}`);
+        res.status(500).json({ message: err.message });
+    }
+});
+
+savedJobRouter.get('/savedJobRouter/top', async (req, res) => {
+    try {
+        console.log('top');
+        const topJobs = await getTopJobsBySaves();
+        res.json(topJobs);
+    } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });

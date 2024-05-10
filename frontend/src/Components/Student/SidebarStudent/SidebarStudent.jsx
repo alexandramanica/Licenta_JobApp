@@ -55,7 +55,7 @@ export default function SidebarStudent() {
         fontFamily:'Montserrat',
         fontWeight:'700',
         padding:'20px',
-        marginBottom:'30px',
+        marginBottom:'0px',
         display:'flex'
         }}>Jumpstart</Typography>
 

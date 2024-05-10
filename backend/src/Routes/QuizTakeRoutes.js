@@ -4,7 +4,9 @@ import {
     getQuizTakeByStudentId,
     getQuizTakes,
     createQuizTake,
-    upsertQuizTake
+    upsertQuizTake,
+    countQuizTakes,
+    countStudentsByPath
 } from '../DataAcces/QuizTakeDA.js';
 
 const quizTakeRouter = express.Router();
@@ -47,6 +49,29 @@ quizTakeRouter.route('/quizTake/student/:studentId').get(async (req, res) => {
         const quizTake = await getQuizTakeByStudentId(req.params.studentId);
         return res.json(quizTake);
     } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
+quizTakeRouter.route('/quizTake/counter').get(async (req, res) => {
+    try {
+        console.log("hahaha")
+        const count = await countQuizTakes();
+        console.log('Count:', count);
+        return res.json({ count });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
+
+quizTakeRouter.route('/quiztake/countByPath').get(async (req, res) => {
+    try {
+        const counts = await countStudentsByPath();
+        return res.json(counts);
+    } catch (error) {
+        console.error('Error:', error);
         res.status(500).json({ message: error.message });
     }
 });

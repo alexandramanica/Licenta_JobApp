@@ -10,6 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SecurityUpdateWarningIcon from '@mui/icons-material/SecurityUpdateWarning';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
 import SidebarStudent from '../../../Components/Student/SidebarStudent/SidebarStudent'
@@ -77,7 +78,7 @@ export default function LearningPath() {
   React.useEffect(() => {
     fetchData();
   },[]);
-  
+
   return (
     <div className="learning-path-page">
       <SidebarStudent/>
@@ -93,7 +94,15 @@ export default function LearningPath() {
               <h3 className='learning-path-page-results-title'>Your Results</h3>
               <p className='learning-path-page-results-path-title'>{mainPathData}</p>
               <p className='learning-path-page-results-path-subtitle'>{selectedPath.pathDescription}</p>
+              <div classname="learning-path-page-take-again">
+                <h5 className='learning-path-page-take-again-text'>Not happy with the results?</h5>
+                <Button className='learning-path-page-take-again-button'
+                endIcon={<ReplayIcon/>}
+                 onClick={() => navigate('/QuizPage')}>Take the quiz again</Button>
+              </div>
             </div>
+
+
 
           <div className="learning-path-page-piechart">
             <PieChart

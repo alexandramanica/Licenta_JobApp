@@ -49,7 +49,10 @@ async function upsertStudent(studentData){
     }
 }
 
+async function countStudents(){
+    return await Student.count();
+}
 
-export { getStudents, getStudentById, createStudent, updateStudent,upsertStudent};
+export { getStudents, getStudentById, createStudent, updateStudent,upsertStudent,countStudents};
         
     

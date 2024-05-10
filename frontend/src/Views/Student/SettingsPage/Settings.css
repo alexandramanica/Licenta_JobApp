@@ -74,9 +74,6 @@
     margin-left: 300px !important;
 }
 
-.btn-saveSettings:hover{
-    background-position: right !important;
-}
 
 @media (max-width: 900px) {
     .inputSetting-div{

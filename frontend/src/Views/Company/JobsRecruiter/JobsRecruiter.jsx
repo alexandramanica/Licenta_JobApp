@@ -32,6 +32,7 @@ export default function JobsRecruiter() {
   const [selectedJobSearch, setSelectedJobSearch] = useState(null);
   const [realTimeSearch, setRealTimeSearch] = useState(null);
   const [locationsFilter, setLocationsFilter] = useState([]);
+    const [showButton,setShowButton]=React.useState(true);
 
   const uniqueLocations = jobsCards.reduce((unique, job) => {
     return unique.includes(job.location) ? unique : [...unique, job.location];
@@ -205,14 +206,15 @@ React.useEffect(() => {
           <div className="jobs-page-card" >
             {filteredJobsCards.map(job => (
               <JobCard key={`job-${job.jobId}`} job={job} className='candidate-card' 
-                      showMoreJob={() => showMoreJob(job)} />
+                      showMoreJob={() => showMoreJob(job)}
+                      showButton={true} />
             ))} 
           </div>
           <div className= "jobs-page-details">
               <JobCardAbout job={selectedJob}
                             deleteJob={() => deleteJob(selectedJob.jobId)}
                             editJob={() => editJob(selectedJob)} />
-          </div>
+        </div>
       </div>
     </div>
 

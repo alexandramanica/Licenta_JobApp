@@ -1,7 +1,7 @@
 
 .personal-details-recruiter-container{
-    margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 280px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -10,8 +10,8 @@
 .personal-details-recruiter-container .personal-details-recruiter-title{
     font-family: 'Montserrat',sans-serif;
     color: #C7EF00;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 3em;
+    font-weight: 700;
     margin-bottom: 10px;
     align-self: flex-start;
 }
