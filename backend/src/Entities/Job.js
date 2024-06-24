@@ -38,6 +38,11 @@ const Job = db.define('Job', {
         values: ['Remote', 'On-Site', 'Hybrid'],
         allowNull: false,
     },
+    jobPath:{
+      type: Sequelize.ENUM,
+      values: ['Engineering', 'Data', 'UI-UX','Business'],
+      allowNull: false,
+  },
     location:{
         type: Sequelize.STRING,
         allowNull: false,

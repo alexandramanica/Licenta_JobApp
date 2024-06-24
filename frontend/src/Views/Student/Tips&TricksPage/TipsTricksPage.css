@@ -10,7 +10,7 @@
 }
 
 .student-tips-tricks .student-tips-tricks-text .student-tips-tricks-text-title{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 3em;
     font-weight: 700;
     text-align: start;
@@ -22,6 +22,7 @@
     color: #000;
     font-weight: 300;
     text-align: start;
+    margin-right: 30px;
 }
  
 .student-tips-tricks .student-tips-tricks-container{
@@ -41,8 +42,9 @@
 .student-tips-tricks .student-tips-tricks-container .student-tips-tricks-container-tip-subtitle{
     display: flex;
     margin-top: 10px;
+    margin-right:95px;
     margin-bottom: 20px;
-    font-size: 1.05em;
+    font-size: 1.15em;
 }
 
 .student-tips-tricks .student-tips-tricks-container {

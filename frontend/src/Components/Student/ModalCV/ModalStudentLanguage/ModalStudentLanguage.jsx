@@ -57,11 +57,11 @@ export default function ModalStudentLanguage({ open, handleClose, saveData }) {
                 <h3 className="add-language-title">Add Language</h3>
                 <h5  className="add-language-advice">
                   <span>
-                    Let's make your profile shine! 
+                    Let's make your profile shine!🌟
                   </span>
-                    Add each job experience one by one, and highlight the ones that could catch the eye of your future employer.
+                  Add each language one by one, and highlight the ones that could catch the eye of your future employer. 🎯
                   <span>
-                    Friendly tip: If you're light on work experience, showcase your internships, volunteer projects, and any cool personal projects related to your field. Let's make your journey stand out!"
+                  Remember, language proficiency can be a key differentiator in the job market. Don't forget to include any languages in which you have professional working proficiency or are a native speaker. 🌍
                   </span>
                 </h5>
 

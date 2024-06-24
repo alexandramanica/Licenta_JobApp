@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import Drawer from '@mui/material/Drawer';
 
 import Sidebar from '../../../Components/Student/SidebarStudent/SidebarStudent.jsx'
 import NavbarStudentMD from '../../../Components/Student/NavbarStudent/NavbarStudentMD.jsx'
@@ -26,6 +28,9 @@ export default function CVpage(){
   const [openModalExperience, setOpenModalExperience] = React.useState(false);
   const [openModalEducation, setOpenModalEducation] = React.useState(false);
   const [openModalLanguage, setOpenModalLanguage] = React.useState(false);
+  //api
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [generatedText, setGeneratedText] = useState('');
 
   const handleOpenModalEducation = () => setOpenModalEducation(true);
   const handleCloseModalEducation = () => setOpenModalEducation(false);
@@ -210,6 +215,91 @@ const saveDataExperience = async (newStudentExperience) => {
     }
   };
 
+  const deleteExperience = async (experienceId) => {
+    try {
+      const token = localStorage.getItem('tokenAcces');
+      console.log("Experience Id delete", experienceId);
+
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+
+      const response = await axiosJWT.delete(
+        `http://localhost:8001/api/experience/delete/${experienceId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      console.log('Delete Response:', response.data);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setExperienceData((prevExperienceData) =>
+        prevExperienceData.filter((experience) => experience.experienceId !== experienceId)
+      );
+      setExperienceCardData((prevExperienceCardData) =>
+        prevExperienceCardData.filter((experience) => experience.experienceId !== experienceId)
+      );
+    } catch (err) {
+      console.error('Error:', err);
+    }
+  };
+
+  const deleteLanguage = async (languageId) => {
+    try {
+      const token = localStorage.getItem('tokenAcces');
+      console.log("Language Id delete", languageId);
+
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+
+      const response = await axiosJWT.delete(
+        `http://localhost:8001/api/language/delete/${languageId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      console.log('Delete Response:', response.data);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setLanguageData((prevLanguageData) =>
+        prevLanguageData.filter((language) => language.languageId !== languageId)
+      );
+      setLanguageCardData((prevLanguageCardData) =>
+        prevLanguageCardData.filter((language) => language.languageId !== languageId)
+      );
+    } catch (err) {
+      console.error('Error:', err);
+    }
+  };
+
+  //api
+  const fetchGeneratedText = async () => {
+    try {
+      let userId = getUserDataFromToken().userId;
+      const token = localStorage.getItem('tokenAcces');
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+      const response = await axiosJWT.get(`http://localhost:8001/api/student/analyze-cv/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setGeneratedText(response.data.analysis);
+      console.log(response.data.analysis);
+      console.log(generatedText);
+      setDrawerOpen(true);
+    } catch (err) {
+      console.error('Error:', err);
+    }
+  };
+
   React.useEffect(() => {
     const fetchStudentData = async () => {
       try {
@@ -313,7 +403,17 @@ const saveDataExperience = async (newStudentExperience) => {
         <Sidebar />
 
         <div className="personal-details-container">
-          <h3 className='personal-details-title'>Personal Details</h3>
+          <h3 className='personal-details-title'>My CV</h3>
+          <h3 className='personal-details-subtitle'>Welcome to your CV page! Here, you can add and showcase your professional journey, skills, and achievements. ✨</h3>
+            <h4 className='personal-details-container-personal-analysis-title'>Personal Analysis</h4>
+            <h5 className='personal-details-container-personal-analysis-subtitle'>Have You Finished Completing Your CV? 📄</h5>
+            <p className='personal-details-container-personal-analysis-text'>If you have finished updating and refining your CV, it’s time to take the next step! Let our advanced AI assistant 🤖 analyze your resume for a comprehensive review.<br/> Our AI-powered analysis will identify key strengths, suggest improvements, and help you better highlight your skills and achievements.</p>
+            <Button className='personal-details-container-personal-analysis-button' onClick={fetchGeneratedText} endIcon={<AssignmentIndIcon />}>
+              Generate CV Analysis
+            </Button>
+          
+          
+          
           <div className="personal-details-input-name">
             <div id="personal-details-first-name-input">
               <h4 className="personal-details-input-title" >First Name</h4>
@@ -388,7 +488,7 @@ const saveDataExperience = async (newStudentExperience) => {
             </Button>
             {allExperienceData.map((experience, index) => (
             <CardStudentExperience key={index} experience={experience} 
-            //onDelete={() => {deleteEducation(education.educationId);}} 
+            onDelete={() => {deleteExperience(experience.experienceId);}} 
             />
           ))}
           </div>
@@ -400,7 +500,7 @@ const saveDataExperience = async (newStudentExperience) => {
             </Button>
             {allLanguageData.map((language, index) => (
             <CardStudentLanguage key={index} language={language} 
-           // onDelete={() => {deleteEducation(education.educationId);}}
+              onDelete={() => {deleteLanguage(language.languageId);}}
              />
           ))}
           </div>
@@ -420,6 +520,21 @@ const saveDataExperience = async (newStudentExperience) => {
         <Button  onClick={handleSave} className='btn-save-cv' endIcon={<TaskAltIcon />}>
             Save
         </Button>
+
+        <Drawer anchor='right' open={drawerOpen} onClose={() => setDrawerOpen(false)}
+          PaperProps={{ 
+            style: {
+                width: '40%', 
+                overflowY: 'auto',
+                height: '100vh',
+            },}}>
+          <div className='drawer-student-cv-container-text-generated'>
+            <h2 className='drawer-student-text-title'>Personal CV Analysis</h2>
+            <h5 className='drawer-student-text-subtitle'>Unlock the potential of your career with our personalized CV analysis! <br/> Our AI assistant 🤖, will review your resume to identify strengths, areas for improvement, and opportunities to better showcase your skills and achievements🌟.<br/> Whether you're a recent graduate 🎓 or still a student 📚, we provide tailored feedback to help you stand out in a competitive job market. Let us help you create a CV that not only captures your unique value but also gets you noticed by employers!🔍</h5>
+            <h3 className='drawer-student-text-tile-result'>Your result:</h3>
+            <Typography variant="body1" style={{ whiteSpace: 'pre-line', fontFamily:'Montserrat',fontWeight:'350', fontSize:'1em' }}>{generatedText}</Typography>
+          </div>
+      </Drawer>
       </div>
     )
 }

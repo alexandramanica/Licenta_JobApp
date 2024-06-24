@@ -11,6 +11,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WorkIcon from '@mui/icons-material/Work';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import LaptopChromebook from '@mui/icons-material/LaptopChromebook';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import {getUserDataFromToken, axiosJWT} from '../../../Views/tokenPrep';
 import './JobCard.css'

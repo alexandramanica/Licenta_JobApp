@@ -12,7 +12,7 @@ export default function CardStepsHomePage() {
         return(
           <Card key={key} className="card-steps-home-page">
             <CardContent>
-              <div className='card-steps-home-page-icon' >{val.icon}</div>
+              <div className='card-steps-home-page-icon'>{val.icon}</div>
               <h2 className='card-steps-home-page-title'>{val.title}</h2>
               <p className='card-steps-home-page-description'>{val.description}</p>
             </CardContent>

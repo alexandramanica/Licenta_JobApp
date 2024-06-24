@@ -10,11 +10,15 @@ import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import  Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from '@mui/material/InputAdornment';
+import Drawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
+import axios from 'axios';
 
 export default function CandidatesRecruiter() {
   const [candidatesCard, setCandidatesCards] = useState([]);
@@ -24,9 +28,34 @@ export default function CandidatesRecruiter() {
   const [realTimeSearch, setRealTimeSearch] = useState(null);
   const [locationsFilter, setLocationsFilter] = useState([]);
 
+  const [criteria, setCriteria] = useState('');
+  const [recommendations, setRecommendations] = useState('');
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const uniqueLocations = candidatesCard.reduce((unique, candidate) => {
     return unique.includes(candidate.placeToWork) ? unique : [...unique, candidate.placeToWork];
   }, []);
+
+  const handleInputChange = (event) => {
+    setCriteria(event.target.value);
+};
+
+const fetchRecommendations = async () => {
+    try {
+        let userId = getUserDataFromToken().userId;
+        console.log("User Id", userId)
+        const token = localStorage.getItem('tokenAcces');
+        const response = await axiosJWT.post(`http://localhost:8001/api/student/get-recomandations/${userId}`, 
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            criteria: criteria
+        });
+        setRecommendations(response.data.recommendations);
+        setDrawerOpen(true);
+    } catch (error) {
+        console.error('Error fetching recommendations:', error);
+    }
+};
 
   React.useEffect(() => {
     try {
@@ -75,7 +104,7 @@ export default function CandidatesRecruiter() {
         <div className="candidates-page">
             <div className="candidates-page-text">
                 <h1 className='candidates-page-text-title'>Candidates</h1>
-                <p className='candidates-page-text-subtitle'>Welcome to our candidate browsing page! Here, you can explore the profiles of talented individuals who are seeking opportunities in various fields.</p>
+                <p className='candidates-page-text-subtitle'>Welcome to our candidate browsing page! Here, you can explore the profiles of talented individuals who are seeking opportunities in various fields 📋.Let's start finding the perfect candidates for your roles 👥!</p>
             </div>
 
             <div className="candidates-page-filters">
@@ -135,6 +164,27 @@ export default function CandidatesRecruiter() {
               className='candidates-page-button-search'
               endIcon={<SearchIcon/>}>Search</Button>
             </div>
+
+            <div className="candidates-recommandations">
+              <h2 className='candidates-recommandations-title'>Our top picks ✨</h2>
+              <p className='candidates-recommandations-subtitle'>Tell us what you're looking for, and our AI assistant 🤖 will recommend the top five candidates. Simply complete the text field with your requirements, and let us do the rest! </p>
+              <div className="candidates-recommandations-text-search">
+              <TextField
+                    className='candidates-recommandations-text-input'
+                    label="Criteria"
+                    name="criteria"
+                    type="text"
+                    value={criteria}
+                    onChange={handleInputChange}
+                    margin="normal"
+                    fullWidth
+                    InputLabelProps={{style: { color: '#ae85ff',paddingLeft:'5px',fontFamily:'Montserrat',fontWeight:'500'}}}
+                />
+                <Button className='candidates-recommandations-button' onClick={fetchRecommendations} endIcon={<TipsAndUpdatesIcon/>}>
+                    Recommend
+                </Button>
+              </div>
+            </div>
             
 
             <div className="candidates-page-container">
@@ -150,6 +200,22 @@ export default function CandidatesRecruiter() {
               </div>
             </div>
         </div> 
+
+        <Drawer anchor='right' open={drawerOpen} onClose={() => setDrawerOpen(false)}
+          PaperProps={{ 
+            style: {
+                width: '40%', 
+                overflowY: 'auto',
+                height: '100vh',
+                padding: '20px',
+            },}}>
+                <div>
+                    <h3 className='drawer-recruiter-recommandations-top5-title'>Our recomandations</h3>
+                    <p className='drawer-recruiter-recommandations-top5-subtitle'>Based on your requirements, our AI assistant has selected the top five candidates📋.<br/> Review the results below to find the perfect match for your needs. Each candidate has been carefully chosen to ensure they possess the specific skills, experience, and qualifications you're looking for.<br/> Here are your results: the perfect talent for your needs, ready to drive success🚀. </p>
+                    <h3 className='drawer-recruiter-recommandations-text-tile-result'>Results: </h3>
+                    <Typography variant="body1" style={{ whiteSpace: 'pre-line', fontFamily:'Montserrat',fontWeight:'350', fontSize:'1em', paddingLeft:'20px' }}>{recommendations}</Typography>
+                </div>
+        </Drawer>
 
     </div>
   )

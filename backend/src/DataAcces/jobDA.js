@@ -1,4 +1,5 @@
 import Job from "../Entities/Job.js";
+import Sequelize from 'sequelize';
 
 async function getJobs(){
     return await Job.findAll();
@@ -23,6 +24,16 @@ async function getJobsByPostedDate(recruiterId){
         where: {
             recruiterId: recruiterId
         },
+        order: [
+            ['jobDate', 'DESC']
+        ],
+        limit: 3
+    });
+}
+
+async function getAllJobsByPostedDateLimit(){
+    console.log("hei postdate")
+    return await Job.findAll({
         order: [
             ['jobDate', 'DESC']
         ],
@@ -90,4 +101,43 @@ async function deleteJob(id) {
     }
 }
 
-export { getJobs, getJobById, createJob, updateJob, upsertJob, getJobsByRecruiterId, deleteJob, getJobsByPostedDate, countJobsByRecruiterId};
+async function getJobIdsByRecruiter(recruiterId) {
+    try {
+        const jobs = await Job.findAll({
+            attributes: ['jobId'],
+            where: { recruiterId: recruiterId }
+        });
+        const jobIds = jobs.map(job => job.jobId);
+        return jobIds;
+    } catch (err) {
+        console.error('Error fetching job IDs:', err);
+        throw err; 
+    }
+}
+
+async function countJobsByPath() {
+    try {
+        const jobs = await Job.findAll({
+            attributes: ['jobPath', [Sequelize.fn('COUNT', 'jobPath'), 'jobCount']],
+            group: ['jobPath'],
+            raw: true,
+        });
+
+        return jobs;
+    } catch (err) {
+        console.error('Error fetching job counts:', err);
+        throw err; 
+    }
+}
+
+async function countAllJobs() {
+    try {
+        const count = await Job.count();
+        return count;
+    } catch (err) {
+        console.error('Error fetching job count:', err);
+    }
+}
+
+
+export { getJobs, getJobById, createJob, updateJob, upsertJob, getJobsByRecruiterId, deleteJob, getJobsByPostedDate, countJobsByRecruiterId, getJobIdsByRecruiter, getAllJobsByPostedDateLimit, countJobsByPath, countAllJobs};

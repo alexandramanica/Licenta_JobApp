@@ -97,7 +97,7 @@ export default function Settings() {
       <Sidebar />
   
       <h3 className="settings-title">Settings</h3>
-
+      <p className='settings-text-subtitle'>Welcome to your settings page! ⚙️ Here, you can update your email and password, ensuring your account remains secure and up-to-date. Remember, a strong password helps protect your account from unauthorized access. 🔒</p>
       <div className="settings-container">
         
         <div className='inputSetting-div'>
@@ -128,7 +128,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <Button className='btn-saveSettings' onClick={handleSave}
+      <Button className='btn-saveSettings' onClick={handleSave} endIcon={<TaskAltIcon/>}
         style={{ display: 'flex', alignItems: 'center' }}>
         Save
       </Button>

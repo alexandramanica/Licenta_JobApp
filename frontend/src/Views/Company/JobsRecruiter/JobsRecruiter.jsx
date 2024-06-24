@@ -118,7 +118,7 @@ React.useEffect(() => {
 
         <div className="jobs-page-text">
             <h1 className='jobs-page-text-title'>Jobs</h1>
-            <p className='jobs-page-text-subtitle'>Welcome to our candidate browsing page! Here, you can explore the profiles of talented individuals who are seeking opportunities in various fields.</p>
+            <p className='jobs-page-text-subtitle'>Welcome to your jobs management page! 📝 Here, you can create new job postings, manage existing ones, and track applications 📈. This is your one-stop destination for all your recruitment needs.</p>
         </div>
         <Button className='jobs-page-add-button' startIcon={<AddBoxIcon /> } onClick={handleOpenModalJob} >Add Job</Button>
         

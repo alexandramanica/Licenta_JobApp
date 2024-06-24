@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
 import SidebarStudent from '../../../Components/Student/SidebarStudent/SidebarStudent'
 import JobCardStudent from '../../../Components/Student/JobCardStudent/JobCardStudent'
@@ -14,14 +15,18 @@ import Pagination from '@mui/material/Pagination';
 import InputAdornment from '@mui/material/InputAdornment';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import SearchIcon from '@mui/icons-material/Search';
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 
 export default function JobsPage() {
+  const navigate=useNavigate();
   const [jobsCards, setJobsCards] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [savedJobs, setSavedJobs] = useState([]);
   const [appliedJobs, setAppliedJobs] = useState([]);
+  const [matchingJobs, setMatchingJobs] = useState([]);
 
   const [activeButton, setActiveButton] = useState('explore');
+  const [quizTaken, setQuizTaken] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   //filters
@@ -217,6 +222,89 @@ export default function JobsPage() {
       }
     };
 
+    const fetchJobsMatching = async () => {
+      const token = localStorage.getItem('tokenAcces');
+      const userId= getUserDataFromToken().userId;
+  
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+  
+      const response = await axiosJWT.get(
+        `http://localhost:8001/api/quizTake/student/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` }
+        }
+      );
+  
+      if (response.data) {
+        console.log(response.data)
+    
+        let highestPathValue = -Infinity;
+        let highestPathName = '';
+      
+        for (const [pathName, pathValue] of Object.entries(response.data)) {
+          if (pathValue > highestPathValue && pathName !== 'quizTakeId' && pathName !== 'studentId' && pathName !== 'finishDate') {
+            highestPathValue = pathValue;
+            highestPathName = pathName;
+          }
+        }
+      
+        console.log(highestPathName, highestPathValue);
+        if (highestPathName === 'BussinesPath'){
+          const matchingJobsArray = jobsCards.filter(job => job.jobPath === 'Business');
+          setFilteredJobsCards(matchingJobsArray);
+          console.log("Match",matchingJobsArray)
+
+        } else  if (highestPathName === 'DataPath') {
+          const matchingJobsArray = jobsCards.filter(job => job.jobPath === 'Data');
+          setFilteredJobsCards(matchingJobsArray);
+
+        } else if (highestPathName === 'UiUxPath'){
+          const matchingJobsArray = jobsCards.filter(job => job.jobPath === 'UI-UX');
+          setFilteredJobsCards(matchingJobsArray);
+
+        } else  if (highestPathName === 'EngineeringPath'){
+          const matchingJobsArray = jobsCards.filter(job => job.jobPath === 'Engineering');
+          setFilteredJobsCards(matchingJobsArray);
+        }
+          
+          
+    
+        
+      } else {
+         console.log("No data found");
+      }
+
+    };
+
+    const fetchExistentQuizTake = async () => {
+      const token = localStorage.getItem('tokenAcces');
+      const userId= getUserDataFromToken().userId;
+
+      if (!token) {
+        console.error('Token not found in localStorage');
+        return;
+      }
+
+      try {
+      const response = await axiosJWT.get(
+        `http://localhost:8001/api/quizTake/student/${userId}`,
+        {headers : {'Authorization' : `Bearer ${token}`}}
+      );
+
+      if (response.data) {
+        setQuizTaken(true);
+        console.log("quiztaken",quizTaken);
+      } else {
+        setQuizTaken(false); // Set quizTaken to false if the user hasn't taken the quiz
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    };
+
     React.useEffect(() => {
     try{
       const token = localStorage.getItem('tokenAcces');
@@ -229,6 +317,7 @@ export default function JobsPage() {
       fetchData();
       fetchAppliedJobs();
       fetchSavedJobs();
+      fetchExistentQuizTake();
     } catch (error) {
       console.log('error', error);}
     }, []);
@@ -241,7 +330,7 @@ export default function JobsPage() {
 
         <div className="student-jobs-page-text">
             <h1 className='student-jobs-page-text-title'>Jobs</h1>
-            <p className='student-jobs-page-text-subtitle'>  Welcome to our job browsing page! Here, you can explore various job opportunities in different fields. Start your journey towards finding your dream job today.</p>
+            <p className='student-jobs-page-text-subtitle'>Welcome to our job browsing page!👋 Here, you can explore various job opportunities in different fields. 🕵️‍♀️ Start your journey towards finding your dream job today.</p>
         </div>
 
         <div className='student-jobs-page-render-buttons'>
@@ -347,11 +436,11 @@ export default function JobsPage() {
             <Autocomplete
               id="student-jobs-page-filter-salary"
               options={[
-                { label: '0 - 20.000', value: [0, 20000] },
-                { label: '20.000 - 40.000', value: [20000, 40000] },
-                { label: '40.000 - 60.000', value: [40000, 60000] },
-                { label: '60.000 - 80.000', value: [60000, 80000] },
-                { label: '80.000 - 100.000', value: [80000, 100000] },
+                { label: '0 - 2.5000', value: [0, 2500] },
+                { label: '2.5000 - 6.000', value: [2500, 6000] },
+                { label: '6.000 - 8.000', value: [6000, 8000] },
+                { label: '8.000 - 10.000', value: [8000, 10000] },
+                { label: '10.000 - 20.000', value: [10000, 20000] },
               ]}
               getOptionLabel={(option) => option.label}
               isOptionEqualToValue={(option, value) => 
@@ -361,7 +450,7 @@ export default function JobsPage() {
                 if (newValue) {
                   setSalaryRange(newValue.value);
                 } else {
-                  setSalaryRange([0, 100000]);
+                  setSalaryRange([0, 20000]);
                 }
               }}
               renderInput={(params) => <TextField {...params} label="Salary Range" InputLabelProps={{style: { color: '#ae85ff',paddingLeft:'5px',fontFamily:'Montserrat',fontWeight:'500'}}} />}
@@ -403,6 +492,16 @@ export default function JobsPage() {
               }}
             className='student-jobs-page-button-search'
             endIcon={<SearchIcon/>}>Search</Button>
+
+        </div>
+
+        <div className="student-jobs-page-personalized-jobs-container">
+              <h5 className="student-jobs-page-personalized-jobs-text">Not happy with the results? See jobs that match your path!</h5>
+              {quizTaken ? (
+                <Button className="student-jobs-page-personalized-jobs-button" endIcon={<AutoFixHighIcon/>} onClick={fetchJobsMatching}>See jobs that match you</Button>
+                ) : (
+                  <Button className="student-jobs-page-personalized-jobs-button" endIcon={<AutoFixHighIcon/>} onClick={() => navigate('/LearningPath')}>Take the Quiz</Button>
+                )}
         </div>
 
         <div className='student-jobs-page-cards'>

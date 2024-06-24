@@ -12,6 +12,7 @@ import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import WorkIcon from '@mui/icons-material/Work';
 import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import './CandidateCardAbout.css';
 
@@ -21,6 +22,7 @@ export default function CandidateCardAbout({student,showMoreCandidate}) {
    const [experiences, setExperiences] = useState([])
    const [languages, setLanguages] = useState([]);
    const [showAlert, setShowAlert] = useState(false);
+   const [pathName, setPathName] = useState('Quiz not taken');
 
    React.useEffect(() => {
     if (!student) {

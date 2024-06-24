@@ -10,7 +10,9 @@
 
 .jobs-page .jobs-page-text{
     font-family: 'Montserrat',sans-serif;
+    margin-top: 10px;
     color: #C7EF00;
+    margin-right: 20px;
     margin-bottom: 10px;
     align-self: flex-start;
 }

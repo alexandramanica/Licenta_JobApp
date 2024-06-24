@@ -1,25 +1,34 @@
 .settings-title{
-    font-size: 40px;
+    font-size: 3em;
     font-family: 'Montserrat',sans-serif;
     color: #C7EF00;
-    margin-top: 130px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 300px;
+    margin-left: 280px;
+}
+
+.settings-text-subtitle{
+    margin-left: 280px;
+    margin-right: 50px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
 }
 
 .settings-container{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .inputSetting-div{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 300px;
+    margin-left: 280px;
     margin-bottom: 10px;
 }
 
@@ -55,11 +64,11 @@
 }
 
 .btn-saveSettings{
-    width: 100px;
+    width: 90px;
     border-radius: 5px !important;
     margin-top: 20px !important;
     font-size: 15px !important;
-    font-weight: 600 !important;
+    font-weight: 800 !important;
     font-family: "Montserrat",sans-serif !important;
     color: black !important;
     cursor: pointer;
@@ -70,7 +79,9 @@
 
     display: flex !important;
     align-items: center !important;
-    margin-left: 300px !important;
+    justify-content: center;
+    flex-direction: row !important;
+    margin-left: 280px !important;
 }
 
 .btn-saveSettings:hover{

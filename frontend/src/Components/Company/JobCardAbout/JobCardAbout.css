@@ -63,6 +63,7 @@
 .recruiter-about-job .recruiter-about-job-container .recruiter-about-job-location-container,
 .recruiter-about-job .recruiter-about-job-container .recruiter-about-job-type-container,
 .recruiter-about-job .recruiter-about-job-container .recruiter-about-job-salary-container,
+.recruiter-about-job .recruiter-about-job-container .recruiter-about-job-path-container,
 .recruiter-about-job .recruiter-about-job-container .recruiter-about-job-regime-container {
   display: flex;
   align-items: center;

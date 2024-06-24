@@ -1,5 +1,5 @@
 import express from 'express';
-import { getJobsApplicationByUserId, createJobsApplication, getStudentsByJobId, getTopJobsByApplicants } from '../DataAcces/jobsApplicationDA.js';
+import { getJobsApplicationByUserId, createJobsApplication, getStudentsByJobId, getTopJobsByApplicants, getApplicantCountByJobId, getApplicationsCountByStudentId} from '../DataAcces/jobsApplicationDA.js';
 
 const jobApplicationRouter = express.Router();
 
@@ -30,14 +30,32 @@ jobApplicationRouter.get('/jobApplication/studentsByJob/:jobId', async (req, res
     }
 });
 
-jobApplicationRouter.get('/jobApplication/top', async (req, res) => {
+jobApplicationRouter.get('/jobApplication/top/:recruiterId', async (req, res) => {
     try {
         console.log('top');
-        const topJobs = await getTopJobsByApplicants();
+        const topJobs = await getTopJobsByApplicants(req.params.recruiterId);
         res.json(topJobs);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
 
+jobApplicationRouter.get('/jobApplication/count/:recruiterId', async (req, res) => {
+    try {
+        console.log('top');
+        const countJobs = await getApplicantCountByJobId(req.params.recruiterId);
+        res.json(countJobs);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+jobApplicationRouter.get('/jobsApplication/countByStudent/:studentId', async (req, res) => {
+    try {
+        const count = await getApplicationsCountByStudentId(req.params.studentId);
+        res.json({ count });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 export default jobApplicationRouter;

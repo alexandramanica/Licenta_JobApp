@@ -12,6 +12,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import AdsClickIcon from '@mui/icons-material/AdsClick';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import { useState } from 'react';
 import { getUserDataFromToken,axiosJWT } from '../../../Views/tokenPrep.jsx';
@@ -89,8 +90,8 @@ export default function JobCardStudent({job,onShowMoreClick, onSaveJob, onApplyJ
                         </div>
 
             <div className="student-job-card-salary-container">
-              <AttachMoneyIcon />
-              <h4>{job.salary}</h4>
+              <AutoAwesomeIcon />
+              <h4>{job.jobPath}</h4>
             </div>
 
           </div>

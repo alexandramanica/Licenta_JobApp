@@ -25,7 +25,8 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
     jobResponsabilities:'',
     location: '',
     salary: '',
-    jobDate:''
+    jobDate:'',
+    jobPath: ''
   });
 
   React.useEffect(() => {
@@ -38,7 +39,8 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
       jobRegime: editingJob ? editingJob.jobRegime : '',
       jobRequirements: editingJob ? editingJob.jobRequirements : '',
       jobResponsabilities: editingJob ? editingJob.jobResponsabilities : '',
-      jobDate: editingJob ? editingJob.jobDate : ''
+      jobDate: editingJob ? editingJob.jobDate : '',
+      jobPath: editingJob ? editingJob.jobPath : ''
     });
   }, [editingJob]);
 
@@ -78,7 +80,8 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
         jobRegime: newRecruiterJob.jobRegime,
         location: newRecruiterJob.location,
         salary: newRecruiterJob.salary,
-        jobDate: newRecruiterJob.jobDate
+        jobDate: newRecruiterJob.jobDate,
+        jobPath: newRecruiterJob.jobPath
 
       };
       console.log('Job data', jobData);
@@ -96,6 +99,20 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
           headers: { Authorization: `Bearer ${token}` }
         });
       }
+
+      setNewRecruiterJob({
+        jobTitle: '',
+        jobDescription: '',
+        jobRequirements:'',
+        jobType: '',
+        jobRegime:'',
+        jobResponsabilities:'',
+        location: '',
+        salary: '',
+        jobDate:'',
+        jobPath: ''
+      });
+
       handleClose();
     } catch (error) {
       console.error('Error in handleSave', error);
@@ -111,10 +128,10 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
             className='modal-recruiter-job'>     
               <Box >
               <h3 className="modal-add-job-title">{editingJob ? 'Edit job' : 'Add a new job'}</h3>
-              <h4 className='modal-add-job-advice'>{editingJob ? 'Edit your job here' : 'Add a new job here'}</h4>
+              <h4 className='modal-add-job-advice'>{editingJob ? 'Update the details of your existing job post to attract the right candidates. 📝' : 'Create a new job post to start your search for the perfect candidate. 🚀'}</h4>
                   <div className="add-job-container">
                       <div className='input-add-job-div'>
-                          <h4 className="input-add-job-title">Company Name</h4>                   
+                          <h4 className="input-add-job-title">Job Title</h4>                   
                           <OutlinedInput placeholder="Software developper" 
                                       inputProps={{ 'aria-label': 'position', 'name': 'jobTitle' }}
                                       type="text" 
@@ -134,6 +151,20 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
                             <MenuItem value={'Remote'}>Remote</MenuItem>
                             <MenuItem value={'On-Site'}>On-Site</MenuItem>
                             <MenuItem value={'Hybrid'}>Hybrid</MenuItem>
+                          </TextField>
+
+                          <h4 className="input-add-job-title">Job path</h4>
+                          <TextField
+                            select
+                            placeholder="**************"
+                            inputProps={{ 'aria-label': 'job', 'name': 'jobPath' }}
+                            value={newRecruiterJob.jobPath} onChange={handleInputChange}
+                            className='input-add-job'
+                          >
+                            <MenuItem value={'Engineering'}>Engineering</MenuItem>
+                            <MenuItem value={'Data'}>Data</MenuItem>
+                            <MenuItem value={'Business'}>Business</MenuItem>
+                            <MenuItem value={'UI-UX'}>UI-UX</MenuItem>
                           </TextField>
 
                           <h4 className="input-add-job-title">Type of job</h4>
@@ -157,7 +188,7 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
                             multiline
                             rows={8}
                             maxRows={8}
-                            placeholder='Write a few words about your experience'
+                            placeholder='Write a few words for this job description'
                             inputProps={{ 'aria-label': 'job','name':'jobDescription' }}
                             className='input-add-job'
                             value={newRecruiterJob.jobDescription} onChange={handleInputChange}
@@ -185,7 +216,7 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
                             multiline
                             rows={8}
                             maxRows={8}
-                            placeholder='Write a few words about your requirements'
+                            placeholder='Write a few words about the job requirements'
                             inputProps={{ 'aria-label': 'job','name':'jobRequirements' }}
                             className='input-add-job'
                             value={newRecruiterJob.jobRequirements} onChange={handleInputChange}
@@ -216,6 +247,7 @@ export default function ModalAddJobCard({ open, handleClose, editingJob, editJob
                         color: 'black',
                         height: '40px',
                         marginLeft:'50px',
+                        marginBottom:'10px',
                         '&:hover': {
                           backgroundColor: '#AE85FF',
                         }

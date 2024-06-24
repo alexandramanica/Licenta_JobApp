@@ -22,6 +22,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import './JobCardAbout.css'
 import CandidateDrawerProfile from '../CandidateDrawerProfile/CandidateDrawerProfile.jsx';
@@ -153,6 +154,11 @@ const handleOpenDrawer= (candidate) => {
                             <div className="recruiter-about-job-salary-container">
                                 <AttachMoneyIcon />
                                 <h4>{job.salary} RON/month</h4>
+                            </div>
+
+                            <div className="recruiter-about-job-path-container">
+                                <AutoAwesomeIcon />
+                                <h4 >{job.jobPath}</h4>  
                             </div>
 
                         </div>

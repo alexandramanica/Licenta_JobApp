@@ -13,7 +13,8 @@
     flex-direction: column;
     text-align: start;
     margin-left: 40px;
-    margin-right: 40px;
+    margin-right: 30px;
+    margin-bottom: 10px;
 
 }
 
@@ -47,6 +48,7 @@
 .student-about-job .student-about-job-container .student-about-job-location-container,
 .student-about-job .student-about-job-container .student-about-job-type-container,
 .student-about-job .student-about-job-container .student-about-job-salary-container,
+.student-about-job .student-about-job-container .student-about-job-path-container,
 .student-about-job .student-about-job-container .student-about-job-regime-container {
   display: flex;
   align-items: center;
@@ -132,7 +134,7 @@
   .student-about-job .student-about-job-container .student-about-job-buttons-container .student-about-job-button-save-job:hover{
     background-color: #c7ef00;
   }
-  
+
   
 
 

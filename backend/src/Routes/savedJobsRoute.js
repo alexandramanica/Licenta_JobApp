@@ -1,5 +1,6 @@
 import express from 'express';
-import { getSavedJobsByUserId, createSavedJob, deleteSavedJob, getTopJobsBySaves } from '../DataAcces/savedJobsDA.js';
+import { getSavedJobsByUserId, createSavedJob, deleteSavedJob, getTopJobsBySaves, getSavedJobsCountByJobId, getSavedJobsCountByStudentId } from '../DataAcces/savedJobsDA.js';
+
 
 const savedJobRouter = express.Router();
 
@@ -32,15 +33,35 @@ savedJobRouter.delete('/savedJob/:studentId/:jobId', async (req, res) => {
     }
 });
 
-savedJobRouter.get('/savedJobRouter/top', async (req, res) => {
+savedJobRouter.get('/savedJobRouter/top/:recruiterId', async (req, res) => {
     try {
         console.log('top');
-        const topJobs = await getTopJobsBySaves();
+        let recruiterId =req.params.recruiterId;
+        const topJobs = await getTopJobsBySaves(recruiterId);
         res.json(topJobs);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
 
+savedJobRouter.get('/savedJobRouter/count/:recruiterId', async (req, res) => {
+    try {
+        console.log('top');
+        let recruiterId =req.params.recruiterId;
+        const topJobs = await getSavedJobsCountByJobId(recruiterId);
+        res.json(topJobs);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+savedJobRouter.get('/savedJob/countByStudent/:studentId', async (req, res) => {
+    try {
+        const count = await getSavedJobsCountByStudentId(req.params.studentId);
+        res.json({ count });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 export default savedJobRouter;

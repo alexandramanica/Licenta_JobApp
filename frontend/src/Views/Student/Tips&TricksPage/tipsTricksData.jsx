@@ -27,7 +27,7 @@ const tipsData=[
     },
     {
         title: "💼 TIP #3: Networking Effectively",
-        content: "Networking is a crucial aspect of building a successful career. Here are some tips to help you network effectively and expand your professional connections:",
+        content: "Networking is a crucial aspect of building a successful career. Here are some tips to help you network effectively and expand your professional connections.",
         text: [
             {subtitle: "📝 STEP #1: Attend Networking Events", textSubtitle: "Attend industry conferences, seminars, and networking events to meet professionals in your field. Bring business cards and be prepared to introduce yourself and discuss your career goals."},
             {subtitle: "📝 STEP #2: Utilize Online Platforms", textSubtitle: "Join professional networking platforms like LinkedIn to connect with professionals in your industry. Create a compelling profile highlighting your skills and experiences, and actively engage with others by sharing insights and participating in discussions."},
@@ -38,7 +38,7 @@ const tipsData=[
     },
     {
         title: "✍️ TIP #4: Writing an Effective Cover Letter",
-        content: "A well-written cover letter can complement your CV and make a strong impression on employers. Here are some tips for writing an effective cover letter:",
+        content: "A well-written cover letter can complement your CV and make a strong impression on employers. Here are some tips for writing an effective cover letter.",
         text: [
             {subtitle: "📝 STEP #1: Customize Each Cover Letter", textSubtitle: "Tailor your cover letter to each job application by addressing the specific requirements of the position and highlighting your relevant skills and experiences. Avoid using a generic template."},
             {subtitle: "📝 STEP #2: Research the Company", textSubtitle: "Research the company to understand its values, culture, and mission. Use this information to personalize your cover letter and demonstrate your alignment with the company's goals."},

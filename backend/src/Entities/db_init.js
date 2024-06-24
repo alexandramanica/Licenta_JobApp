@@ -40,7 +40,7 @@ function Create_DB(){
 
 function FK_Config(){
 
-    // QuizTake.sync({ force: true })
+    // SavedJob.sync({ force: true })
     // .then(() => {
     //   console.log('Table has been successfully recreated.');
     // })

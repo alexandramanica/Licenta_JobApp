@@ -6,7 +6,7 @@ async function getQuizTakes(){
 
 async function getQuizTakeById(id){
     let quizTake = await QuizTake.findByPk(id); 
-    if (!quizTake) throw new Error('quizTake not found');
+    if (!quizTake) throw new Error('quizTake not found2');
     return quizTake;
 }
 
@@ -14,7 +14,7 @@ async function createQuizTake(quizData){
     try {
         console.log('Received data', quizData);
         const quiz = await QuizTake.create(quizData);
-        console.log('Recruiter created', quiz);
+        console.log('Quiz created', quiz);
         return quiz;
     } catch (error) {
         console.log(error);
@@ -45,7 +45,7 @@ async function upsertQuizTake(quizData){
 async function getQuizTakeByStudentId(studentId){
     try {
         let quizTake = await QuizTake.findOne({ where: { studentId: studentId } });
-        if (!quizTake) throw new Error('QuizTake not found');
+        if (!quizTake) throw new Error('QuizTake not found3');
         return quizTake;
     } catch (error) {
         console.error('Error getting quiz take by student ID:', error);
@@ -56,6 +56,7 @@ async function getQuizTakeByStudentId(studentId){
 
 async function countQuizTakes(){
     try{
+        console.log("hahahahax2")
         return await QuizTake.count();}
     catch{
         throw new Error('Error counting quiz takes');

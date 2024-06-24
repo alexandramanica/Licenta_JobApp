@@ -76,7 +76,7 @@ export default function QuizzPage() {
           <div className='quiz-page-content'>
 
             <div className='quiz-page-header'>
-              <h1 className='quiz-page-header-title'>Question {quizQuestionsData[currentQuestion].questionId}/8 </h1>
+              <h1 className='quiz-page-header-title'>Question {quizQuestionsData[currentQuestion].questionId}/20 </h1>
               <p className='quiz-page-header-subtitle'>Please click on the answer that applies best to you for each question.</p>
             </div>
 

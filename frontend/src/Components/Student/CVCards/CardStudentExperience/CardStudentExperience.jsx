@@ -31,6 +31,15 @@ export default function CardStudentExperience({ experience, onDelete, onEdit }) 
         }
       }
 
+      const handleEdit = async () => {
+        try {
+          console.log('Editing experience with ID:', experienceId);
+          await onEdit(experienceId); 
+        } catch (err) {
+          console.error('Failed to delete experience:', err);
+        }
+      };
+
     return (
       <div className='card-experience-container'>
         <Card variant='outlined' className='card-experience'>
@@ -47,7 +56,7 @@ export default function CardStudentExperience({ experience, onDelete, onEdit }) 
                 <IconButton aria-label="delete" className='card-experience-icon-button-delete' onClick={() => handleDelete(experienceId)}>
                   <DeleteIcon />
                 </IconButton>
-                <IconButton aria-label="edit" className='card-experience-icon-button-edit'>
+                <IconButton aria-label="edit" className='card-experience-icon-button-edit' onClick={() => handleEdit(experienceId)}>
                   <ModeEditOutlineIcon />
                 </IconButton>
               </div>

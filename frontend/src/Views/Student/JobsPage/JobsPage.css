@@ -11,7 +11,7 @@
 }
 
 .student-jobs-page .student-jobs-page-text .student-jobs-page-text-title{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 3em;
     font-weight: 700;
     text-align: start;
@@ -132,4 +132,39 @@ justify-content: center;
 .student-jobs-page .student-jobs-page-filters .student-jobs-page-button-search:hover{
     background-color: #ae85ff;
     color: #fff;
+}
+
+.student-jobs-page .student-jobs-page-personalized-jobs-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 45px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-jobs-page .student-jobs-page-personalized-jobs-container .student-jobs-page-personalized-jobs-text{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+.student-jobs-page .student-jobs-page-personalized-jobs-container .student-jobs-page-personalized-jobs-button{
+    background-color: #7f27ff; 
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.student-jobs-page .student-jobs-page-personalized-jobs-container .student-jobs-page-personalized-jobs-button:hover{
+    background-color: #ae85ff; 
+
 }

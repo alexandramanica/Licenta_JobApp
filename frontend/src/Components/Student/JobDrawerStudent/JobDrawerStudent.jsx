@@ -13,6 +13,7 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 import AdsClickIcon from '@mui/icons-material/AdsClick';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BusinessIcon from '@mui/icons-material/Business';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import './JobDrawerStudent.css'
 
@@ -75,7 +76,7 @@ export default function JobDrawerStudent({job, isOpen, onClose,  onSaveJob, onAp
                 onClose={onClose}
                 PaperProps={{ 
                         style: {
-                            width: '45%', 
+                            width: '47%', 
                             overflowY: 'auto',
                             height: '100vh',
                         },
@@ -108,6 +109,11 @@ export default function JobDrawerStudent({job, isOpen, onClose,  onSaveJob, onAp
                                 <AttachMoneyIcon />
                                 <h4>{job.salary} RON/month</h4>
                             </div>
+
+                            <div className="student-about-job-path-container">
+                                <AutoAwesomeIcon />
+                                <h4>{job.jobPath}</h4>
+                            </div>
                         </div>
 
                         <div className='student-about-job-buttons-container'>
@@ -137,18 +143,18 @@ export default function JobDrawerStudent({job, isOpen, onClose,  onSaveJob, onAp
                             ))}
 
                             <h3 className='student-about-job-title-description'>Requirements</h3>
-                            {job.jobRequirements.split(/(?<=[.;])\s*/).map((sentence, index) => (
-                            <ul key={index} style={{ marginBottom: '10px', marginLeft:'20px' }}>
-                                <li className='student-about-job-subtitle-description'>{sentence}</li>
+                            <ul style={{ marginBottom: '10px', marginLeft:'0px' }}>
+                                {job.jobRequirements.split(/(?<=[.;])\s*/).map((sentence, index) => (
+                                    <li key={index} className='student-about-job-subtitle-description'>{sentence}</li>
+                                ))}
                             </ul>
-                            ))}
 
                             <h3 className='student-about-job-title-description'>Responsabilities</h3>
-                            {job.jobResponsabilities.split(/(?<=[.;])\s*/).map((sentence, index) => (
-                            <ul key={index} style={{ marginBottom: '10px', marginLeft:'20px' }}>
-                                <li className='student-about-job-subtitle-description'>{sentence}</li>
+                            <ul style={{ marginBottom: '10px', marginLeft:'0px' }}>
+                                {job.jobResponsabilities.split(/(?<=[.;])\s*/).map((sentence, index) => (
+                                    <li key={index} className='student-about-job-subtitle-description'>{sentence}</li>
+                                ))}
                             </ul>
-                            ))}
                         </div>
 
                     </div>

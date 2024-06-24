@@ -126,10 +126,11 @@ export default function RecruiterProfile() {
 
       <div className="personal-details-recruiter-container">
           <h3 className='personal-details-recruiter-title'>My Profile</h3>
+          <p className='personal-details-recruiter-subtitle'>This profile page is your professional showcase. Here, you can manage your personal details and company information 🏢. Keep your profile up-to-date to ensure potential candidates get the best impression of you and your company. Remember, a well-crafted profile can be a powerful tool in attracting top talent.</p>
           <div className="personal-details-recruiter-input-name">
             <div id="personal-details-recruiter-first-name-input">
               <h4 className="personal-details-recruiter-input-title" >First Name</h4>
-              <OutlinedInput placeholder="Alexandra" 
+              <OutlinedInput placeholder="ex: Alexandra" 
                               inputProps={{ 'aria-label': 'first-name','name':'recruiterFirstName' }}
                               type="text" 
                               value={newRecruiterData.recruiterFirstName} onChange={handleInputChange} 
@@ -138,7 +139,7 @@ export default function RecruiterProfile() {
 
             <div id="personal-details-recruiter-last-name-input" >
               <h4 className="personal-details-recruiter-input-title">Last Name</h4>
-              <OutlinedInput placeholder="Manica" 
+              <OutlinedInput placeholder="ex: Mănica" 
                               inputProps={{ 'aria-label': 'last-name','name':'recruiterLastName' }}
                               type="text" 
                               value={newRecruiterData.recruiterLastName} onChange={handleInputChange}
@@ -148,7 +149,7 @@ export default function RecruiterProfile() {
 
           <div className='personal-details-recruiter-input-container'>
               <h4 className="personal-details-recruiter-input-title">Company Name</h4>
-              <OutlinedInput placeholder="0767412964" 
+              <OutlinedInput placeholder="ex: Microsoft" 
                               inputProps={{ 'aria-label': 'companyName','name':'companyName' }}
                               type="text" 
                               value={newRecruiterData.companyName} onChange={handleInputChange}
@@ -172,7 +173,7 @@ export default function RecruiterProfile() {
 
             <div className='personal-details-recruiter-input-container'>
               <h4 className="personal-details-recruiter-input-title">Location</h4>
-              <OutlinedInput placeholder="Bucharest" 
+              <OutlinedInput placeholder="ex: Bucharest" 
                               inputProps={{ 'aria-label': 'location','name':'location' }}
                               type="text"
                               value={newRecruiterData.location} onChange={handleInputChange} 
@@ -181,7 +182,7 @@ export default function RecruiterProfile() {
 
             <div className='personal-details-recruiter-input-container'>
               <h4 className="personal-details-recruiter-input-title">Phone Number</h4>
-              <OutlinedInput placeholder="0767412964" 
+              <OutlinedInput placeholder="ex: 0767412964" 
                               inputProps={{ 'aria-label': 'phone','name':'phoneNumber' }}
                               type="text" 
                               value={newRecruiterData.phoneNumber} onChange={handleInputChange}

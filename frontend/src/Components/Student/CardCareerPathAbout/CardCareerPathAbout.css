@@ -30,9 +30,9 @@
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
-    background-color:#171738 ;
+    background-color:#FFF ;
     border: none !important;
-    color: white;
+    color: black;
     font-family: 'Montserrat',sans-serif;
     z-index: 1000;
     border-radius: 10px;
@@ -45,6 +45,7 @@
 .modal-career-path-about .modal-text-container .modal-text-container-title{
     font-size: 3rem;
     margin-bottom: 2.5%;
+    color: #c7ef00;
 }
 
 .modal-career-path-about .modal-text-container .modal-text-container-description{
@@ -56,10 +57,25 @@
 .modal-career-path-about .modal-text-container .modal-text-container-skills-title{
     font-size: 1.75rem;
     margin-bottom: 1.5%;
+    font-weight: 800px;
+    color:#7f27ff;
 }
 
 .modal-career-path-about .modal-text-container .modal-text-container-skills p{
     font-size: 1.2rem;
     margin-bottom: 1%;
     font-weight: 400;
+}
+
+.career-path-all-cards .card-career-path-about {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 22%;
+    height: 300px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.career-path-all-cards .card-career-path-about:hover {
+    transform: scale(1.05); 
 }

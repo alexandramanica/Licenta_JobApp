@@ -21,7 +21,7 @@ export default function ButtonAppBar() {
   return (
     <div>
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" className='navbar' sx={{backgroundColor:"#ffffff", boxShadow:0, borderBottom: '1px solid #F8F8FA'}}>
+      <AppBar position="static" className='navbar' sx={{backgroundColor:"#ffffff", boxShadow:0, borderBottom: '2px solid #F8F8FA'}}>
         <Toolbar sx={{ justifyContent: "center" }}>
         <Box sx={{ 
            flexGrow: 1,
@@ -38,9 +38,14 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           </Box>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 ,display:'flex',alignContent:"left",color:"#000000"}}>
-            JumpStart
-          </Typography>
+          <div style={{ display: 'flex', flexGrow: 1, alignContent: "left" }}>
+            <Typography variant="h5" component="div" style={{ color: "#000000", fontFamily: "Montserrat",fontWeight: "bold" }}>
+              Jump
+            </Typography>
+            <Typography variant="h5" component="div" style={{ color: "#c7ef00", fontFamily: "Montserrat", fontWeight: "bold", textDecoration: "underline" }}>
+              Start
+            </Typography>
+          </div>
           
             <Link to={"/"}>
             <Button color="inherit" className='btn Home' sx={{

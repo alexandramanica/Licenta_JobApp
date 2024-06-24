@@ -8,6 +8,7 @@
     font-family: 'Montserrat',sans-serif;
     color: #C7EF00;
     margin-bottom: 10px;
+    margin-top: 10px;
     align-self: flex-start;
 }
 
@@ -55,10 +56,10 @@
     display: flex;
     width: 96%;
     flex-direction: row;
-    margin-left: 10px;
+    
     margin-bottom: 10px;
 }
-.candidates-page .candidates-page-filters .candidates-page-filter-search-container{
+.candidates-page .candidates-page-filters .candidates-page-filter-search-container, .candidates-recommandations .candidates-recommandations-text-search .candidates-recommandations-text-input{
     display: flex;
     width: 65%;
     border-radius: 5px;
@@ -100,4 +101,89 @@
 .candidates-page .candidates-page-filters .candidates-page-button-search:hover{
     background-color: #ae85ff;
     color: #fff;
+}
+
+.candidates-recommandations .candidates-recommandations-text-search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.candidates-recommandations .candidates-recommandations-text-search .candidates-recommandations-button{
+    background-color: #C7EF00; 
+    color: #000;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 50px;
+    justify-content: center;
+}
+
+.candidates-recommandations .candidates-recommandations-text-search .candidates-recommandations-button:hover{
+    background-color: #ae85ff;
+    color: #ffffff;
+}
+
+.candidates-recommandations .candidates-recommandations-title{
+    font-family: 'Montserrat',sans-serif;
+    color: #7f27ff;
+    height: 65%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+    font-size: 2.3em;
+    font-weight: 700;
+    text-align: start;
+}
+
+.candidates-recommandations .candidates-recommandations-text-search .candidates-recommandations-text-input{
+    display: flex;
+    width: 84%;
+    border-radius: 5px;
+    background-color: #F8F8FA;
+    border-radius: 10px;
+}
+
+.candidates-recommandations-subtitle{
+    margin-top: 10px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
+/*drawer*/
+.drawer-recruiter-recommandations-top5-title{
+    font-family: 'Montserrat',sans-serif;
+    color: #7f27ff;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    align-self: flex-start;
+    font-size: 2.75em;
+    font-weight: 800;
+    text-align: start;
+    text-decoration: underline;
+}
+
+.drawer-recruiter-recommandations-top5-subtitle{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 1.10em;
+    color: #000;
+    font-weight: 400;
+    text-align: start;
+}
+
+.drawer-recruiter-recommandations-text-tile-result{
+    margin-top: 10px;
+    font-size: 2.5em;
+    margin-left: 20px;
+    font-weight: 700;
+    color: #C7EF00;
+    text-decoration: underline;
 }

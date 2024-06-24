@@ -47,6 +47,7 @@ quizTakeRouter.route('/quizTake/upsert').post(async (req, res) => {
 quizTakeRouter.route('/quizTake/student/:studentId').get(async (req, res) => {
     try {
         const quizTake = await getQuizTakeByStudentId(req.params.studentId);
+        console.log("111111111111111111111111111111111111111")
         return res.json(quizTake);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -55,13 +56,14 @@ quizTakeRouter.route('/quizTake/student/:studentId').get(async (req, res) => {
 
 
 quizTakeRouter.route('/quizTake/counter').get(async (req, res) => {
+    console.log("hahaha4")
     try {
         console.log("hahaha")
         const count = await countQuizTakes();
         console.log('Count:', count);
         return res.json({ count });
     } catch (error) {
-        console.error('Error:', error);
+        console.log('Error:', error);
         res.status(500).json({ message: error.message });
     }
 });
@@ -71,7 +73,7 @@ quizTakeRouter.route('/quiztake/countByPath').get(async (req, res) => {
         const counts = await countStudentsByPath();
         return res.json(counts);
     } catch (error) {
-        console.error('Error:', error);
+        console.log('Error:', error);
         res.status(500).json({ message: error.message });
     }
 });

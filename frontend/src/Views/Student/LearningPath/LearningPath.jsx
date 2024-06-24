@@ -35,7 +35,7 @@ export default function LearningPath() {
       console.error('Token not found in localStorage');
       return;
     }
-
+    try{
     const response = await axiosJWT.get(
       `http://localhost:8001/api/quizTake/student/${userId}`,
       {
@@ -68,6 +68,9 @@ export default function LearningPath() {
        console.log("No learning path found with the specified name");
     }
     }
+    } catch(err) {
+      console.log(err)
+    }
   };
 
   const handleButtonClick = (module) => {
@@ -84,7 +87,7 @@ export default function LearningPath() {
       <SidebarStudent/>
       <div className="learning-path-page-text">
         <h1 className='learning-path-page-text-title'>Learning Path</h1>
-        <p className='learning-path-page-text-subtitle'>  Welcome to our job browsing page! Here, you can explore various job opportunities in different fields. Start your journey towards finding your dream job today.</p>
+        <p className='learning-path-page-text-subtitle'>Welcome to your personalized learning path! 🚀 Here, you can explore and navigate through the modules tailored to your interests and career goals. 🎯</p>
       </div>
 
       {quizPathData && quizPathData.length > 0 ? (
@@ -122,7 +125,7 @@ export default function LearningPath() {
          </div>
 
           <div className="learning-path-page-roadmap">
-            <h4 className='learning-path-page-roadmap-title'>Roadmap</h4>
+            <h4 className='learning-path-page-roadmap-title'>🗺️Roadmap</h4>
 
             <div className='learning-path-page-roadmap-cards-container'>
               <Card className='learning-path-page-roadmap-card'>

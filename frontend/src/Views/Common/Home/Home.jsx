@@ -24,11 +24,7 @@ export default function Home() {
           <Button className='btn-home-page-hero-learn'>Learn more about us!</Button>
         </div>
         <div className="home-page-hero-images">
-          <img src={imageGeometricPattern} alt="home" className='home-page-hero-image1'/>
-          <div className='home-page-hero-container-job-card'>
-            <img src={imageJobCard} alt="home" className='home-page-hero-image2'/>
-          </div>
-          
+          <img src={imageGeometricPattern} alt="home" className='home-page-hero-image1'/>     
         </div>
       </div>
 

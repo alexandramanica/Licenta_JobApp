@@ -13,8 +13,17 @@
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-top: 10px;
     align-self: flex-start;
 }
+.personal-details-recruiter-container .personal-details-recruiter-subtitle{
+    margin-right: 50px;
+    font-size: 1.25em;
+    color: #000;
+    font-weight: 300;
+    text-align: start;
+}
+
 .personal-details-recruiter-container .personal-details-recruiter-input-container{
     display: flex;
     flex-direction: column;
@@ -73,15 +82,17 @@
 .container-recruiter-profile .btn-save-profile{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-left: 300px;
+    margin-left: 280px;
     background-color: #C7EF00;
     color: #000000;
     font-family: 'Montserrat',sans-serif;
     font-weight: 800;
     font-size: 15px;
+    margin-top: 10px;
     margin-bottom: 20px;
+    padding: 7px;
 }
 
 .container-recruiter-profile .btn-save-profile:hover{

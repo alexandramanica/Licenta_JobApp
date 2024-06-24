@@ -8,7 +8,10 @@ import {
     updateJob,
     upsertJob,
     countJobsByRecruiterId,
-    deleteJob
+    deleteJob,
+    getAllJobsByPostedDateLimit,
+    countJobsByPath,
+    countAllJobs
 } from '../DataAcces/jobDA.js';
 
 const jobRouter = express.Router();
@@ -71,6 +74,18 @@ jobRouter.get('/job/postingDate/:recruiterId', async (req, res) => {
     }
 });
 
+jobRouter.get('/job/postingDate/all/:id', async (req, res) => {
+    try {
+        console.log("jobs")
+      const jobs = await getAllJobsByPostedDateLimit();
+      console.log(jobs)
+      res.json(jobs);
+      console.log(jobs)
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+});
+
 jobRouter.get('/job/count/:recruiterId', async (req, res) => {
     try {
       const count = await countJobsByRecruiterId(req.params.recruiterId);
@@ -86,6 +101,25 @@ jobRouter.route('/job/delete/:id').delete(async (req, res) => {
         return res.json({ message: 'Job deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });
+    }
+});
+
+jobRouter.get('/job/countByPath/:id', async (req, res) => {
+    try {
+        console.log("hei")
+        const counts = await countJobsByPath();
+        res.json(counts);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+});
+
+jobRouter.get('/jobs/allCount', async (req, res) => {
+    try {
+        const count = await countAllJobs();
+        res.json({ count });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
 

@@ -12,7 +12,11 @@ import {
     createStudent,
     updateStudent,
     upsertStudent,
-    countStudents
+    countStudents,
+    getStudentData,
+    getAllStudentsData,
+    sendStudentDataToChatGPT,
+    recommendTopStudentsToApi
 } from '../DataAcces/studentDA.js';
 
 import { getEducationsByStudentId } from '../DataAcces/educationDA.js';
@@ -242,6 +246,28 @@ studentRouter.route('/student/generate-cv/:studentId').get(async (req, res) => {
     } catch (error) {
         console.error('Error when creating the pdf:', error);
         return res.status(500).json({ error: 'Database error' });
+    }
+});
+
+studentRouter.route('/student/analyze-cv/:id').get(async (req, res) => {
+    try {
+        const studentId = req.params.id;
+        const studentData = await getStudentData(studentId);
+        const analysis = await sendStudentDataToChatGPT(studentData);
+        return res.json({ analysis });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+studentRouter.route('/student/get-recomandations/:id').post(async (req, res) => {
+    const criteria = req.body.criteria; 
+    try {
+        const recommendations = await recommendTopStudentsToApi(criteria);
+        res.json({ recommendations });
+    } catch (error) {
+        console.error('Error recommending top students:', error);
+        res.status(500).json({ message: error.message });
     }
 });
 
